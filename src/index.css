@@ -1,0 +1,213 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  }
+  
+  body {
+    background-color: #fafbf6;
+    color: #1e2b22;
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, h4, .font-display {
+    font-family: 'Cormorant Garamond', 'Playfair Display', Georgia, serif;
+    letter-spacing: -0.01em;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #f1ede4;
+}
+::-webkit-scrollbar-thumb {
+  background: #345d47;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #244633;
+}
+
+/* Horizontal Infinite Marquee Animation for Ingredients */
+@keyframes marqueeScroll {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee-infinite {
+  display: flex;
+  width: max-content;
+  animation: marqueeScroll 28s linear infinite;
+}
+
+.animate-marquee-infinite:hover {
+  animation-play-state: paused;
+}
+
+/* Smooth Fade In */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.3s ease-out forwards;
+}
+
+/* Slow gentle swaying animations for botanical foliage leaves */
+@keyframes swaySlowLeft {
+  0%, 100% {
+    transform: rotate(0deg) translate(0px, 0px) scale(1);
+  }
+  50% {
+    transform: rotate(3deg) translate(8px, -6px) scale(1.02);
+  }
+}
+
+@keyframes swaySlowRight {
+  0%, 100% {
+    transform: rotate(0deg) translate(0px, 0px) scale(1);
+  }
+  50% {
+    transform: rotate(-3deg) translate(-8px, -6px) scale(1.02);
+  }
+}
+
+@keyframes floatSlow {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-10px) rotate(1.5deg);
+  }
+}
+
+.animate-sway-left {
+  animation: swaySlowLeft 9s ease-in-out infinite;
+  transform-origin: top left;
+  will-change: transform;
+}
+
+.animate-sway-right {
+  animation: swaySlowRight 11s ease-in-out infinite;
+  transform-origin: top right;
+  will-change: transform;
+}
+
+.animate-float-slow {
+  animation: floatSlow 8s ease-in-out infinite;
+  will-change: transform;
+}
+
+/* Handwritten script styling */
+.font-script {
+  font-family: 'Caveat', cursive, serif;
+}
+
+/* 2027 Luxury Glassmorphism & Elevation */
+.glass-panel-2027 {
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  box-shadow: 0 30px 60px -12px rgba(0, 0, 0, 0.5), inset 0 1px 0 0 rgba(255, 255, 255, 0.2);
+}
+
+@keyframes pulseGlow {
+  0%, 100% {
+    box-shadow: 0 0 20px rgba(217, 119, 6, 0.25);
+  }
+  50% {
+    box-shadow: 0 0 35px rgba(217, 119, 6, 0.55);
+  }
+}
+
+.animate-pulse-glow {
+  animation: pulseGlow 4s ease-in-out infinite;
+}
+
+/* Slide in from right for slide-over panels */
+@keyframes slideInRight {
+  from {
+    transform: translateX(100%);
+    opacity: 0.8;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.animate-slide-in-right {
+  animation: slideInRight 0.32s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Soft gentle bounce for badges and interactive pills */
+@keyframes softBounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-3px);
+  }
+}
+
+.animate-soft-bounce {
+  animation: softBounce 2.5s ease-in-out infinite;
+}
+
+/* Subtle breathing scale animation */
+@keyframes pulseSubtle {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.025);
+  }
+}
+
+.animate-pulse-subtle {
+  animation: pulseSubtle 3.5s ease-in-out infinite;
+}
+
+@keyframes shimmerBeam {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(200%); }
+}
+
+.animate-shimmer-beam {
+  animation: shimmerBeam 3.5s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+/* Modern 2027 Smooth Navigation & Section Transition Animations */
+section, main > div, [id] {
+  scroll-margin-top: 5.5rem;
+}
+
+@keyframes sectionReveal {
+  from {
+    opacity: 0.9;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.reveal-on-scroll {
+  animation: sectionReveal 0.5s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+

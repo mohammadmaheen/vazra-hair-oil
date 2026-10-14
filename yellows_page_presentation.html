@@ -1,0 +1,1746 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Yellows Page — Professional Business Deck</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+            display: ['"Outfit"', 'sans-serif'],
+          },
+          colors: {
+            brand: {
+              yellow: '#FACC15',
+              gold: '#EAB308',
+              amber: '#D97706',
+              dark: '#0A0F1D',
+              slate: '#131D31',
+              card: '#1A2642',
+              border: '#273859',
+              light: '#F8FAFC',
+              muted: '#94A3B8',
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background-color: #070B14;
+      color: #F8FAFC;
+      margin: 0;
+      padding: 0;
+      overflow-x: hidden;
+    }
+
+    h1, h2, h3, h4, .font-display {
+      font-family: 'Outfit', sans-serif;
+    }
+
+    /* 16:9 Presentation Canvas */
+    .slide-canvas {
+      width: 100%;
+      max-width: 1280px;
+      aspect-ratio: 16 / 9;
+      margin: 0 auto;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 25px 60px -15px rgba(0, 0, 0, 0.7), 0 0 0 1px rgba(250, 204, 21, 0.15);
+      border-radius: 20px;
+    }
+
+    /* Print styling for direct PDF generation (Ctrl+P or headless browser) */
+    @media print {
+      @page {
+        size: landscape;
+        margin: 0;
+      }
+      html, body {
+        background: #0A0F1D !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        width: 100% !important;
+        height: auto !important;
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+      }
+      .no-print {
+        display: none !important;
+      }
+      #presentationContainer {
+        padding: 0 !important;
+        margin: 0 !important;
+        display: block !important;
+        width: 100% !important;
+        height: auto !important;
+      }
+      .slide-canvas {
+        max-width: 100% !important;
+        width: 100% !important;
+        height: auto !important;
+        aspect-ratio: auto !important;
+        border-radius: 0 !important;
+        box-shadow: none !important;
+        display: block !important;
+        overflow: visible !important;
+      }
+      .slide-item {
+        display: flex !important;
+        width: 100vw !important;
+        height: 100vh !important;
+        position: relative !important;
+        page-break-after: always !important;
+        break-after: page !important;
+        page-break-inside: avoid !important;
+        break-inside: avoid !important;
+        box-sizing: border-box !important;
+      }
+    }
+
+    .glass-card {
+      background: rgba(26, 38, 66, 0.7);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .glass-card-yellow {
+      background: linear-gradient(135deg, rgba(250, 204, 21, 0.09) 0%, rgba(26, 38, 66, 0.8) 100%);
+      border: 1px solid rgba(250, 204, 21, 0.25);
+    }
+
+    .yellow-gradient-text {
+      background: linear-gradient(135deg, #FFFFFF 20%, #FACC15 80%, #F59E0B 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    /* Custom scrollbars */
+    ::-webkit-scrollbar {
+      width: 6px;
+      height: 6px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #0A0F1D;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #273859;
+      border-radius: 3px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #FACC15;
+    }
+  </style>
+</head>
+<body class="flex flex-col min-h-screen justify-between select-none">
+
+  <!-- TOP BAR / CONTROLS (NO-PRINT) -->
+  <header class="no-print bg-[#0D1527]/90 backdrop-blur border-b border-brand-border px-6 py-3.5 sticky top-0 z-50 flex items-center justify-between">
+    <div class="flex items-center space-x-3">
+      <div class="w-8 h-8 rounded-lg bg-brand-yellow flex items-center justify-center font-display font-black text-brand-dark text-lg shadow-lg shadow-brand-yellow/20">
+        Y
+      </div>
+      <div>
+        <h1 class="text-sm font-bold text-white tracking-wide uppercase font-display flex items-center gap-2">
+          Yellows Page <span class="text-xs bg-brand-yellow/20 text-brand-yellow px-2 py-0.5 rounded-full border border-brand-yellow/30 font-medium">Official Pitch Deck</span>
+        </h1>
+        <p class="text-[11px] text-brand-muted">Canva-Grade Corporate Presentation • 14 Slides</p>
+      </div>
+    </div>
+
+    <!-- Center Navigation Controls -->
+    <div class="flex items-center space-x-2 bg-brand-dark/80 px-3 py-1.5 rounded-full border border-brand-border">
+      <button onclick="prevSlide()" class="p-1.5 hover:bg-brand-card rounded-full transition text-gray-300 hover:text-white" title="Previous Slide (Left Arrow)">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M15 19l-7-7 7-7"></path></svg>
+      </button>
+      <span class="text-xs font-semibold px-2 text-brand-yellow font-display" id="slideIndicator">01 / 14</span>
+      <button onclick="nextSlide()" class="p-1.5 hover:bg-brand-card rounded-full transition text-gray-300 hover:text-white" title="Next Slide (Right Arrow or Space)">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7"></path></svg>
+      </button>
+    </div>
+
+    <!-- Actions -->
+    <div class="flex items-center space-x-2.5">
+      <button onclick="toggleGridMode()" class="px-3 py-1.5 text-xs font-medium bg-brand-card hover:bg-brand-border text-gray-200 hover:text-white rounded-lg border border-brand-border flex items-center gap-1.5 transition">
+        <svg class="w-3.5 h-3.5 text-brand-yellow" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z"></path></svg>
+        <span>All Slides</span>
+      </button>
+
+      <button onclick="toggleFullscreen()" class="px-3 py-1.5 text-xs font-medium bg-brand-card hover:bg-brand-border text-gray-200 hover:text-white rounded-lg border border-brand-border flex items-center gap-1.5 transition" title="Press F for Fullscreen">
+        <svg class="w-3.5 h-3.5 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5l-5-5m5 5v-4m0 4h-4"></path></svg>
+        <span>Fullscreen (F)</span>
+      </button>
+
+      <button onclick="window.print()" class="px-3.5 py-1.5 text-xs font-bold bg-brand-yellow hover:bg-yellow-400 text-brand-dark rounded-lg shadow-md shadow-brand-yellow/20 flex items-center gap-1.5 transition">
+        <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z"></path></svg>
+        <span>Save / Print PDF</span>
+      </button>
+    </div>
+  </header>
+
+  <!-- MAIN PRESENTATION CONTAINER -->
+  <main class="flex-1 flex items-center justify-center p-4 md:p-8" id="presentationContainer">
+
+    <!-- THE 16:9 SLIDE STAGE -->
+    <div class="slide-canvas bg-gradient-to-br from-[#0D1527] via-[#101A30] to-[#0A0F1D] text-white flex flex-col" id="slideStage">
+
+      <!-- ============================================================ -->
+      <!-- SLIDE 1: WHAT IS YELLOWS PAGE? (COVER & OVERVIEW) -->
+      <!-- ============================================================ -->
+      <section class="slide-item w-full h-full flex flex-col justify-between p-8 md:p-12 relative" data-slide="1">
+        <!-- Ambient Glow -->
+        <div class="absolute top-0 right-0 w-[500px] h-[500px] bg-brand-yellow/10 rounded-full blur-3xl pointer-events-none -mr-32 -mt-32"></div>
+
+        <!-- Header Tag -->
+        <div class="flex items-center justify-between relative z-10 shrink-0">
+          <div class="flex items-center gap-3">
+            <span class="w-10 h-10 rounded-xl bg-brand-yellow text-brand-dark flex items-center justify-center font-display font-black text-xl shadow-lg shadow-brand-yellow/30">YP</span>
+            <div>
+              <span class="text-xs uppercase tracking-widest font-bold text-brand-yellow">Discovery & Growth Platform</span>
+              <p class="text-[10px] text-gray-400">Business Ecosystem 2026</p>
+            </div>
+          </div>
+          <div class="px-3.5 py-1 rounded-full bg-brand-yellow/10 border border-brand-yellow/30 text-brand-yellow text-xs font-semibold">
+            Slide 01 • Executive Overview
+          </div>
+        </div>
+
+        <!-- Main Content (Split Grid) -->
+        <div class="grid grid-cols-12 gap-8 items-center relative z-10 my-auto">
+          <!-- Left 7 cols: Copy -->
+          <div class="col-span-7 space-y-4">
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-white/5 border border-white/10 text-xs text-gray-300">
+              <span class="w-2 h-2 rounded-full bg-brand-yellow animate-ping"></span>
+              The Next-Generation Local Business Engine
+            </div>
+
+            <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold font-display leading-[1.08] tracking-tight text-white">
+              What is <br/>
+              <span class="yellow-gradient-text">Yellows Page?</span>
+            </h1>
+
+            <p class="text-sm text-gray-300 leading-relaxed max-w-xl">
+              <strong class="text-white font-semibold">Yellows Page</strong> is an all-in-one digital discovery and customer acquisition ecosystem. We transform local businesses into high-converting market leaders with direct, unfiltered customer inquiries.
+            </p>
+
+            <div class="grid grid-cols-3 gap-3 pt-1">
+              <div class="glass-card rounded-xl p-3 border-l-2 border-l-brand-yellow">
+                <div class="text-lg font-bold font-display text-brand-yellow">100% Direct</div>
+                <div class="text-[10px] text-gray-300 mt-0.5">Call & WhatsApp leads with zero middlemen.</div>
+              </div>
+              <div class="glass-card rounded-xl p-3 border-l-2 border-l-blue-400">
+                <div class="text-lg font-bold font-display text-white">Google Rank</div>
+                <div class="text-[10px] text-gray-300 mt-0.5">High-authority local SEO indexation for your brand.</div>
+              </div>
+              <div class="glass-card rounded-xl p-3 border-l-2 border-l-emerald-400">
+                <div class="text-lg font-bold font-display text-emerald-400">High Trust</div>
+                <div class="text-[10px] text-gray-300 mt-0.5">Verified badge, QR reviews & authentic social proof.</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right 5 cols: Professional Image Frame -->
+          <div class="col-span-5 relative">
+            <div class="relative rounded-2xl overflow-hidden shadow-2xl border border-white/15 aspect-[4/5] max-h-[350px]">
+              <img 
+                src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=1000&q=80" 
+                alt="Corporate Business Executive" 
+                class="w-full h-full object-cover object-top"
+              />
+              <div class="absolute inset-0 bg-gradient-to-t from-brand-dark/90 via-transparent to-transparent"></div>
+              
+              <!-- Floating Card -->
+              <div class="absolute bottom-3 left-3 right-3 glass-card p-2.5 rounded-xl border border-brand-yellow/30 flex items-center gap-2.5">
+                <div class="w-8 h-8 rounded-lg bg-brand-yellow/20 flex items-center justify-center text-brand-yellow font-bold text-sm shrink-0">
+                  ⚡
+                </div>
+                <div>
+                  <div class="text-xs font-bold text-white">Zero Commission. Zero Brokers.</div>
+                  <div class="text-[10px] text-gray-300">Customers connect straight with you.</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Slide Footer (Standardized across every slide) -->
+        <div class="flex items-center justify-between pt-3 border-t border-white/10 text-[11px] relative z-10 shrink-0">
+          <div class="flex items-center gap-2">
+            <span class="text-brand-yellow font-black font-display tracking-wider">YELLOWS PAGE</span>
+            <span class="text-gray-600">•</span>
+            <span class="text-gray-400">Direct Inquiries</span>
+            <span class="text-gray-600">•</span>
+            <a href="tel:88897018885" class="text-brand-yellow font-bold hover:underline flex items-center gap-1">
+              <span>📞</span> 88897018885
+            </a>
+          </div>
+          <div class="flex items-center gap-2">
+            <a href="https://www.yellowspage.com" target="_blank" class="text-brand-yellow font-bold tracking-wide hover:underline flex items-center gap-1.5 bg-brand-yellow/10 px-2.5 py-0.5 rounded-full border border-brand-yellow/20">
+              <span>🌐</span> www.yellowspage.com
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============================================================ -->
+      <!-- SLIDE 2: HOW YOU GET BENEFITED -->
+      <!-- ============================================================ -->
+      <section class="slide-item w-full h-full flex flex-col justify-between p-8 md:p-12 relative hidden" data-slide="2">
+        <div class="flex items-center justify-between shrink-0">
+          <div class="flex items-center gap-2">
+            <span class="text-xs font-bold uppercase tracking-wider text-brand-yellow">Value Proposition</span>
+            <span class="text-gray-500">•</span>
+            <span class="text-xs text-gray-300">Tangible Business Impact</span>
+          </div>
+          <span class="text-xs text-brand-yellow font-display px-3 py-1 bg-brand-yellow/10 rounded-full border border-brand-yellow/20">Slide 02</span>
+        </div>
+
+        <div class="my-auto space-y-5">
+          <div>
+            <h2 class="text-3xl md:text-4xl font-extrabold font-display text-white">
+              How Your Business <span class="text-brand-yellow">Gets Benefited</span>
+            </h2>
+            <p class="text-xs text-gray-300 max-w-2xl mt-1">
+              Yellows Page isn't an expense—it's a high-yield inbound pipeline delivering measurable growth every single month.
+            </p>
+          </div>
+
+          <!-- 4 Feature Cards Grid -->
+          <div class="grid grid-cols-2 gap-4">
+            <div class="glass-card rounded-xl p-4 border-t-2 border-brand-yellow space-y-1.5 hover:bg-brand-card/90 transition">
+              <div class="w-8 h-8 rounded-lg bg-brand-yellow/10 text-brand-yellow flex items-center justify-center font-bold text-base">
+                📞
+              </div>
+              <h3 class="text-sm font-bold text-white font-display">Direct High-Intent Customer Inquiries</h3>
+              <ul class="text-xs text-gray-300 space-y-1">
+                <li>• 1-Click Call & WhatsApp connectivity right from your profile.</li>
+                <li>• Inquiries go straight to your phone—no lead delays or middle agents.</li>
+              </ul>
+            </div>
+
+            <div class="glass-card rounded-xl p-4 border-t-2 border-blue-400 space-y-1.5 hover:bg-brand-card/90 transition">
+              <div class="w-8 h-8 rounded-lg bg-blue-500/10 text-blue-400 flex items-center justify-center font-bold text-base">
+                ⭐
+              </div>
+              <h3 class="text-sm font-bold text-white font-display">Instant Brand Credibility & Trust</h3>
+              <ul class="text-xs text-gray-300 space-y-1">
+                <li>• Verified Business Badge marks you as legitimate and trustworthy.</li>
+                <li>• Centralized customer reviews & instant Scan-to-Review QR codes.</li>
+              </ul>
+            </div>
+
+            <div class="glass-card rounded-xl p-4 border-t-2 border-emerald-400 space-y-1.5 hover:bg-brand-card/90 transition">
+              <div class="w-8 h-8 rounded-lg bg-emerald-500/10 text-emerald-400 flex items-center justify-center font-bold text-base">
+                🚀
+              </div>
+              <h3 class="text-sm font-bold text-white font-display">Tri-Channel Traffic Synergies</h3>
+              <ul class="text-xs text-gray-300 space-y-1">
+                <li>• Free organic visibility backed by Google SEO indexation.</li>
+                <li>• Amplified reach via targeted Meta and Instagram social promotions.</li>
+              </ul>
+            </div>
+
+            <div class="glass-card rounded-xl p-4 border-t-2 border-purple-400 space-y-1.5 hover:bg-brand-card/90 transition">
+              <div class="w-8 h-8 rounded-lg bg-purple-500/10 text-purple-400 flex items-center justify-center font-bold text-base">
+                📊
+              </div>
+              <h3 class="text-sm font-bold text-white font-display">Actionable Real-Time Analytics</h3>
+              <ul class="text-xs text-gray-300 space-y-1">
+                <li>• Real-time visitor counts, click-to-call taps, and inquiry tracking.</li>
+                <li>• Know exactly which services drive maximum ROI for your business.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Slide Footer -->
+        <div class="flex items-center justify-between pt-3 border-t border-white/10 text-[11px] relative z-10 shrink-0">
+          <div class="flex items-center gap-2">
+            <span class="text-brand-yellow font-black font-display tracking-wider">YELLOWS PAGE</span>
+            <span class="text-gray-600">•</span>
+            <span class="text-gray-400">Direct Inquiries</span>
+            <span class="text-gray-600">•</span>
+            <a href="tel:88897018885" class="text-brand-yellow font-bold hover:underline flex items-center gap-1">
+              <span>📞</span> 88897018885
+            </a>
+          </div>
+          <div class="flex items-center gap-2">
+            <a href="https://www.yellowspage.com" target="_blank" class="text-brand-yellow font-bold tracking-wide hover:underline flex items-center gap-1.5 bg-brand-yellow/10 px-2.5 py-0.5 rounded-full border border-brand-yellow/20">
+              <span>🌐</span> www.yellowspage.com
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============================================================ -->
+      <!-- SLIDE 3: WHY YOU NEED TO LIST (THE COMPETITOR FLAW) -->
+      <!-- ============================================================ -->
+      <section class="slide-item w-full h-full flex flex-col justify-between p-8 md:p-12 relative hidden" data-slide="3">
+        <div class="flex items-center justify-between shrink-0">
+          <div class="flex items-center gap-2">
+            <span class="text-xs font-bold uppercase tracking-wider text-rose-400">Competitive Analysis</span>
+            <span class="text-gray-500">•</span>
+            <span class="text-xs text-gray-300">The Problem with Legacy Portals</span>
+          </div>
+          <span class="text-xs text-brand-yellow font-display px-3 py-1 bg-brand-yellow/10 rounded-full border border-brand-yellow/20">Slide 03</span>
+        </div>
+
+        <div class="my-auto space-y-4">
+          <div>
+            <h2 class="text-3xl md:text-4xl font-extrabold font-display text-white">
+              Why Choose <span class="text-brand-yellow">Yellows Page?</span>
+            </h2>
+            <p class="text-xs text-gray-300 max-w-2xl mt-1">
+              Traditional lead aggregators trap businesses in toxic price-wars. Here is why modern businesses are switching.
+            </p>
+          </div>
+
+          <!-- Comparison Table -->
+          <div class="grid grid-cols-2 gap-4">
+            <!-- Legacy Pages (Negative) -->
+            <div class="bg-rose-950/20 border border-rose-500/30 rounded-2xl p-4 space-y-3">
+              <div class="flex items-center justify-between pb-2 border-b border-rose-500/20">
+                <span class="text-xs font-bold text-rose-400 font-display flex items-center gap-2">
+                  <span class="w-4 h-4 rounded-full bg-rose-500/20 flex items-center justify-center text-[10px]">✕</span>
+                  Traditional Lead Portals
+                </span>
+                <span class="text-[9px] uppercase font-bold text-rose-300 bg-rose-500/10 px-2 py-0.5 rounded">High Cost & Low Trust</span>
+              </div>
+              <ul class="text-xs text-gray-300 space-y-2">
+                <li class="flex items-start gap-2">
+                  <span class="text-rose-400 font-bold">•</span>
+                  <span><strong>Resold Leads:</strong> The same lead is sold simultaneously to 5–10 competitors, triggering a cutthroat price race to the bottom.</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="text-rose-400 font-bold">•</span>
+                  <span><strong>Overpriced Packages:</strong> Giant annual packages costing lakhs with declining lead quality and zero guarantees.</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="text-rose-400 font-bold">•</span>
+                  <span><strong>Zero Brand Equity:</strong> You don't build your own brand—you are simply renting temporary phone numbers.</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="text-rose-400 font-bold">•</span>
+                  <span><strong>No Transparency:</strong> Vague algorithms prioritize whoever pays astronomical renewal fees.</span>
+                </li>
+              </ul>
+            </div>
+
+            <!-- Yellows Page (Positive) -->
+            <div class="glass-card-yellow rounded-2xl p-4 space-y-3 border border-brand-yellow/40">
+              <div class="flex items-center justify-between pb-2 border-b border-brand-yellow/30">
+                <span class="text-xs font-bold text-brand-yellow font-display flex items-center gap-2">
+                  <span class="w-4 h-4 rounded-full bg-brand-yellow text-brand-dark flex items-center justify-center text-[10px] font-black">✓</span>
+                  The Yellows Page Model
+                </span>
+                <span class="text-[9px] uppercase font-bold text-brand-yellow bg-brand-yellow/20 px-2 py-0.5 rounded">Exclusive & Sustainable</span>
+              </div>
+              <ul class="text-xs text-gray-200 space-y-2">
+                <li class="flex items-start gap-2">
+                  <span class="text-brand-yellow font-bold">•</span>
+                  <span><strong>100% Exclusive Inquiries:</strong> Customers choose <em>your</em> business specifically and contact you directly.</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="text-brand-yellow font-bold">•</span>
+                  <span><strong>Transparent Fixed Packages:</strong> Clear pricing starting at just ₹15,000 with zero hidden per-lead commissions.</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="text-brand-yellow font-bold">•</span>
+                  <span><strong>Permanent Digital Asset:</strong> Build Google SEO backlinks, authentic review history, and lifetime customer trust.</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="text-brand-yellow font-bold">•</span>
+                  <span><strong>Omnichannel Reach:</strong> Multi-channel amplification across Search, Meta, and Instagram.</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Slide Footer -->
+        <div class="flex items-center justify-between pt-3 border-t border-white/10 text-[11px] relative z-10 shrink-0">
+          <div class="flex items-center gap-2">
+            <span class="text-brand-yellow font-black font-display tracking-wider">YELLOWS PAGE</span>
+            <span class="text-gray-600">•</span>
+            <span class="text-gray-400">Direct Inquiries</span>
+            <span class="text-gray-600">•</span>
+            <a href="tel:88897018885" class="text-brand-yellow font-bold hover:underline flex items-center gap-1">
+              <span>📞</span> 88897018885
+            </a>
+          </div>
+          <div class="flex items-center gap-2">
+            <a href="https://www.yellowspage.com" target="_blank" class="text-brand-yellow font-bold tracking-wide hover:underline flex items-center gap-1.5 bg-brand-yellow/10 px-2.5 py-0.5 rounded-full border border-brand-yellow/20">
+              <span>🌐</span> www.yellowspage.com
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============================================================ -->
+      <!-- SLIDE 4: HOW IMPORTANT TO LIST (MARKET URGENCY) -->
+      <!-- ============================================================ -->
+      <section class="slide-item w-full h-full flex flex-col justify-between p-8 md:p-12 relative hidden" data-slide="4">
+        <div class="flex items-center justify-between shrink-0">
+          <div class="flex items-center gap-2">
+            <span class="text-xs font-bold uppercase tracking-wider text-brand-yellow">Market Reality</span>
+            <span class="text-gray-500">•</span>
+            <span class="text-xs text-gray-300">Why Digital Listing is Mandatory</span>
+          </div>
+          <span class="text-xs text-brand-yellow font-display px-3 py-1 bg-brand-yellow/10 rounded-full border border-brand-yellow/20">Slide 04</span>
+        </div>
+
+        <div class="grid grid-cols-12 gap-8 items-center my-auto">
+          <!-- Left 7 cols -->
+          <div class="col-span-7 space-y-4">
+            <h2 class="text-3xl md:text-4xl font-extrabold font-display text-white leading-tight">
+              Why It Is <span class="text-brand-yellow">Mission-Critical</span> To List Today
+            </h2>
+            <p class="text-xs text-gray-300 leading-relaxed">
+              Customer buying behavior has fundamentally changed. If a local buyer cannot verify your business online with one tap, you don't lose that lead tomorrow—<strong>you lose it in the next 10 seconds</strong> to a competitor.
+            </p>
+
+            <div class="space-y-2.5">
+              <div class="flex items-start gap-3 bg-brand-card/60 p-2.5 rounded-xl border border-white/10">
+                <span class="w-5 h-5 rounded bg-brand-yellow/20 text-brand-yellow flex items-center justify-center font-bold text-[11px] shrink-0 mt-0.5">01</span>
+                <div>
+                  <h4 class="text-xs font-bold text-white">93% of Local Inquiries Begin Online</h4>
+                  <p class="text-[11px] text-gray-300">Consumers search before calling. Unlisted businesses are completely invisible to active local shoppers.</p>
+                </div>
+              </div>
+
+              <div class="flex items-start gap-3 bg-brand-card/60 p-2.5 rounded-xl border border-white/10">
+                <span class="w-5 h-5 rounded bg-brand-yellow/20 text-brand-yellow flex items-center justify-center font-bold text-[11px] shrink-0 mt-0.5">02</span>
+                <div>
+                  <h4 class="text-xs font-bold text-white">The Cost of Word-of-Mouth Reliance</h4>
+                  <p class="text-[11px] text-gray-300">Referrals are unpredictable. A verified online listing creates consistent, automated inbound lead flow year-round.</p>
+                </div>
+              </div>
+
+              <div class="flex items-start gap-3 bg-brand-card/60 p-2.5 rounded-xl border border-white/10">
+                <span class="w-5 h-5 rounded bg-brand-yellow/20 text-brand-yellow flex items-center justify-center font-bold text-[11px] shrink-0 mt-0.5">03</span>
+                <div>
+                  <h4 class="text-xs font-bold text-white">Mobile Speed Wins the Deal</h4>
+                  <p class="text-[11px] text-gray-300">Modern customers demand instant WhatsApp chat and direct phone dials. Yellows Page gives them immediate action buttons.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right 5 cols: Corporate Business Image -->
+          <div class="col-span-5 relative">
+            <div class="rounded-2xl overflow-hidden shadow-2xl border border-white/15 aspect-[4/5] max-h-[350px] relative">
+              <img 
+                src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?auto=format&fit=crop&w=1000&q=80" 
+                alt="Business Leader Analyzing Growth" 
+                class="w-full h-full object-cover"
+              />
+              <div class="absolute inset-0 bg-gradient-to-t from-brand-dark/95 via-transparent to-transparent"></div>
+              
+              <div class="absolute bottom-3 left-3 right-3 text-center glass-card p-2.5 rounded-xl border border-white/10">
+                <div class="text-2xl font-black font-display text-brand-yellow">82%</div>
+                <div class="text-[10px] text-gray-200">Of shoppers research local providers online before making contact.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Slide Footer -->
+        <div class="flex items-center justify-between pt-3 border-t border-white/10 text-[11px] relative z-10 shrink-0">
+          <div class="flex items-center gap-2">
+            <span class="text-brand-yellow font-black font-display tracking-wider">YELLOWS PAGE</span>
+            <span class="text-gray-600">•</span>
+            <span class="text-gray-400">Direct Inquiries</span>
+            <span class="text-gray-600">•</span>
+            <a href="tel:88897018885" class="text-brand-yellow font-bold hover:underline flex items-center gap-1">
+              <span>📞</span> 88897018885
+            </a>
+          </div>
+          <div class="flex items-center gap-2">
+            <a href="https://www.yellowspage.com" target="_blank" class="text-brand-yellow font-bold tracking-wide hover:underline flex items-center gap-1.5 bg-brand-yellow/10 px-2.5 py-0.5 rounded-full border border-brand-yellow/20">
+              <span>🌐</span> www.yellowspage.com
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============================================================ -->
+      <!-- SLIDE 5: WHAT YOU GET WHEN YOU LIST -->
+      <!-- ============================================================ -->
+      <section class="slide-item w-full h-full flex flex-col justify-between p-8 md:p-12 relative hidden" data-slide="5">
+        <div class="flex items-center justify-between shrink-0">
+          <div class="flex items-center gap-2">
+            <span class="text-xs font-bold uppercase tracking-wider text-brand-yellow">Listing Features</span>
+            <span class="text-gray-500">•</span>
+            <span class="text-xs text-gray-300">Your Complete Digital Storefront</span>
+          </div>
+          <span class="text-xs text-brand-yellow font-display px-3 py-1 bg-brand-yellow/10 rounded-full border border-brand-yellow/20">Slide 05</span>
+        </div>
+
+        <div class="my-auto space-y-5">
+          <div>
+            <h2 class="text-3xl md:text-4xl font-extrabold font-display text-white">
+              What You Get With Your <span class="text-brand-yellow">Yellows Page Profile</span>
+            </h2>
+            <p class="text-xs text-gray-300 max-w-2xl mt-1">
+              A high-converting, mobile-optimized business command center built to turn casual visitors into paying customers.
+            </p>
+          </div>
+
+          <!-- Feature Grid (6 Items) -->
+          <div class="grid grid-cols-3 gap-3.5">
+            <div class="glass-card p-3.5 rounded-xl space-y-1.5 border-l-2 border-l-brand-yellow">
+              <div class="text-brand-yellow text-lg">🌐</div>
+              <h3 class="text-xs font-bold text-white font-display">Dedicated Web Profile</h3>
+              <p class="text-[10px] text-gray-300">Custom branded URL, featured hero images, business category & subcategory classification.</p>
+            </div>
+
+            <div class="glass-card p-3.5 rounded-xl space-y-1.5 border-l-2 border-l-emerald-400">
+              <div class="text-emerald-400 text-lg">⚡</div>
+              <h3 class="text-xs font-bold text-white font-display">Instant Call & WhatsApp</h3>
+              <p class="text-[10px] text-gray-300">One-tap direct call and WhatsApp inquiry buttons routing customers straight to your phone.</p>
+            </div>
+
+            <div class="glass-card p-3.5 rounded-xl space-y-1.5 border-l-2 border-l-blue-400">
+              <div class="text-blue-400 text-lg">🔗</div>
+              <h3 class="text-xs font-bold text-white font-display">Direct Website Backlink</h3>
+              <p class="text-[10px] text-gray-300">Authoritative do-follow links directing organic search traffic and authority to your website.</p>
+            </div>
+
+            <div class="glass-card p-3.5 rounded-xl space-y-1.5 border-l-2 border-l-amber-400">
+              <div class="text-amber-400 text-lg">⭐</div>
+              <h3 class="text-xs font-bold text-white font-display">Verified Review Suite</h3>
+              <p class="text-[10px] text-gray-300">Authentic 5-star customer review collection system with downloadable Review QR codes.</p>
+            </div>
+
+            <div class="glass-card p-3.5 rounded-xl space-y-1.5 border-l-2 border-l-purple-400">
+              <div class="text-purple-400 text-lg">📥</div>
+              <h3 class="text-xs font-bold text-white font-display">Lead & Inquiry Tracker</h3>
+              <p class="text-[10px] text-gray-300">Centralized message management ensuring no incoming customer request is ever missed.</p>
+            </div>
+
+            <div class="glass-card p-3.5 rounded-xl space-y-1.5 border-l-2 border-l-rose-400">
+              <div class="text-rose-400 text-lg">📊</div>
+              <h3 class="text-xs font-bold text-white font-display">Real-Time Analytics</h3>
+              <p class="text-[10px] text-gray-300">Track monthly profile impressions, click-to-call taps, and visitor engagement trends.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Slide Footer -->
+        <div class="flex items-center justify-between pt-3 border-t border-white/10 text-[11px] relative z-10 shrink-0">
+          <div class="flex items-center gap-2">
+            <span class="text-brand-yellow font-black font-display tracking-wider">YELLOWS PAGE</span>
+            <span class="text-gray-600">•</span>
+            <span class="text-gray-400">Direct Inquiries</span>
+            <span class="text-gray-600">•</span>
+            <a href="tel:88897018885" class="text-brand-yellow font-bold hover:underline flex items-center gap-1">
+              <span>📞</span> 88897018885
+            </a>
+          </div>
+          <div class="flex items-center gap-2">
+            <a href="https://www.yellowspage.com" target="_blank" class="text-brand-yellow font-bold tracking-wide hover:underline flex items-center gap-1.5 bg-brand-yellow/10 px-2.5 py-0.5 rounded-full border border-brand-yellow/20">
+              <span>🌐</span> www.yellowspage.com
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============================================================ -->
+      <!-- SLIDE 6: GOOGLE SEO & HIGH-INTENT LEADS (SENIOR MARKETING BRIEF) -->
+      <!-- ============================================================ -->
+      <section class="slide-item w-full h-full flex flex-col justify-between p-8 md:p-12 relative hidden" data-slide="6">
+        <div class="flex items-center justify-between shrink-0">
+          <div class="flex items-center gap-2">
+            <span class="text-xs font-bold uppercase tracking-wider text-blue-400">Marketing Masterclass • Channel 1</span>
+            <span class="text-gray-500">•</span>
+            <span class="text-xs text-gray-300">Senior Marketing Manager Perspective</span>
+          </div>
+          <span class="text-xs text-brand-yellow font-display px-3 py-1 bg-brand-yellow/10 rounded-full border border-brand-yellow/20">Slide 06</span>
+        </div>
+
+        <div class="grid grid-cols-12 gap-8 items-center my-auto">
+          <!-- Left 7 cols: Marketing Strategy -->
+          <div class="col-span-7 space-y-3.5">
+            <div class="inline-flex items-center gap-2 px-3 py-0.5 rounded bg-blue-500/10 border border-blue-500/30 text-xs text-blue-300 font-semibold">
+              <span>🔍</span> High Purchase-Intent Channel
+            </div>
+
+            <h2 class="text-3xl md:text-4xl font-extrabold font-display text-white">
+              Google SEO & <span class="text-blue-400">Organic Inbound Leads</span>
+            </h2>
+
+            <p class="text-xs text-gray-300 leading-relaxed">
+              Google traffic represents the highest conversion rate in marketing because users possess <strong>explicit active intent</strong>. They are not browsing—they are actively searching for a solution right now.
+            </p>
+
+            <div class="space-y-2">
+              <div class="p-2.5 rounded-xl bg-brand-card/80 border border-white/10 space-y-0.5">
+                <div class="text-xs font-bold text-white flex items-center justify-between">
+                  <span>1. Bottom-of-Funnel Search Intent</span>
+                  <span class="text-[9px] text-emerald-400 bg-emerald-500/10 px-1.5 py-0.5 rounded">Highest Close Rate</span>
+                </div>
+                <p class="text-[10px] text-gray-300">Users searching "best [service] near me" have their wallet ready. Yellows Page captures this traffic directly.</p>
+              </div>
+
+              <div class="p-2.5 rounded-xl bg-brand-card/80 border border-white/10 space-y-0.5">
+                <div class="text-xs font-bold text-white flex items-center justify-between">
+                  <span>2. Piggybacking High Domain Authority</span>
+                  <span class="text-[9px] text-blue-400 bg-blue-500/10 px-1.5 py-0.5 rounded">Instant SEO Boost</span>
+                </div>
+                <p class="text-[10px] text-gray-300">Instead of spending 12+ months building a new website's SEO, you rank instantly using Yellows Page's authoritative indexing.</p>
+              </div>
+
+              <div class="p-2.5 rounded-xl bg-brand-card/80 border border-white/10 space-y-0.5">
+                <div class="text-xs font-bold text-white flex items-center justify-between">
+                  <span>3. Zero Ad Fatigue & Compounding Equity</span>
+                  <span class="text-[9px] text-brand-yellow bg-brand-yellow/10 px-1.5 py-0.5 rounded">Compounding ROI</span>
+                </div>
+                <p class="text-[10px] text-gray-300">Unlike paid PPC ads that stop the second budget runs out, organic Google visibility compounds over time with zero cost per click.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right 5 cols -->
+          <div class="col-span-5 relative">
+            <div class="rounded-2xl overflow-hidden shadow-2xl border border-blue-500/30 aspect-[4/5] max-h-[350px] relative">
+              <img 
+                src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1000&q=80" 
+                alt="Search Marketing & Analytics" 
+                class="w-full h-full object-cover"
+              />
+              <div class="absolute inset-0 bg-gradient-to-t from-brand-dark/95 via-brand-dark/40 to-transparent"></div>
+              
+              <div class="absolute bottom-3 left-3 right-3 glass-card p-2.5 rounded-xl border border-blue-500/40">
+                <div class="flex items-center justify-between text-xs font-bold text-white mb-1">
+                  <span>Local SEO Conversion Metric</span>
+                  <span class="text-blue-400">76%</span>
+                </div>
+                <div class="w-full bg-white/10 h-1 rounded-full overflow-hidden">
+                  <div class="bg-blue-400 h-full rounded-full" style="width: 76%"></div>
+                </div>
+                <p class="text-[10px] text-gray-300 mt-1.5">76% of people searching on smartphones for local services contact a business within 24 hours.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Slide Footer -->
+        <div class="flex items-center justify-between pt-3 border-t border-white/10 text-[11px] relative z-10 shrink-0">
+          <div class="flex items-center gap-2">
+            <span class="text-brand-yellow font-black font-display tracking-wider">YELLOWS PAGE</span>
+            <span class="text-gray-600">•</span>
+            <span class="text-gray-400">Direct Inquiries</span>
+            <span class="text-gray-600">•</span>
+            <a href="tel:88897018885" class="text-brand-yellow font-bold hover:underline flex items-center gap-1">
+              <span>📞</span> 88897018885
+            </a>
+          </div>
+          <div class="flex items-center gap-2">
+            <a href="https://www.yellowspage.com" target="_blank" class="text-brand-yellow font-bold tracking-wide hover:underline flex items-center gap-1.5 bg-brand-yellow/10 px-2.5 py-0.5 rounded-full border border-brand-yellow/20">
+              <span>🌐</span> www.yellowspage.com
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============================================================ -->
+      <!-- SLIDE 7: FACEBOOK / META TARGETED LEADS (SENIOR MARKETING BRIEF) -->
+      <!-- ============================================================ -->
+      <section class="slide-item w-full h-full flex flex-col justify-between p-8 md:p-12 relative hidden" data-slide="7">
+        <div class="flex items-center justify-between shrink-0">
+          <div class="flex items-center gap-2">
+            <span class="text-xs font-bold uppercase tracking-wider text-indigo-400">Marketing Masterclass • Channel 2</span>
+            <span class="text-gray-500">•</span>
+            <span class="text-xs text-gray-300">Senior Marketing Manager Perspective</span>
+          </div>
+          <span class="text-xs text-brand-yellow font-display px-3 py-1 bg-brand-yellow/10 rounded-full border border-brand-yellow/20">Slide 07</span>
+        </div>
+
+        <div class="grid grid-cols-12 gap-8 items-center my-auto">
+          <!-- Left 7 cols -->
+          <div class="col-span-7 space-y-3.5">
+            <div class="inline-flex items-center gap-2 px-3 py-0.5 rounded bg-indigo-500/10 border border-indigo-500/30 text-xs text-indigo-300 font-semibold">
+              <span>👥</span> Hyper-Local Demographics & Community
+            </div>
+
+            <h2 class="text-3xl md:text-4xl font-extrabold font-display text-white">
+              Facebook / Meta <span class="text-indigo-400">Targeted Inbound Leads</span>
+            </h2>
+
+            <p class="text-xs text-gray-300 leading-relaxed">
+              While Google catches people actively searching, Facebook creates <strong>local demand</strong> by reaching specific residential neighborhoods, decision-makers, and age groups in your immediate vicinity.
+            </p>
+
+            <div class="space-y-2">
+              <div class="p-2.5 rounded-xl bg-brand-card/80 border border-white/10 space-y-0.5">
+                <div class="text-xs font-bold text-white flex items-center justify-between">
+                  <span>1. Precision Geographic Pinpointing</span>
+                  <span class="text-[9px] text-indigo-300 bg-indigo-500/10 px-1.5 py-0.5 rounded">Radius Targeting</span>
+                </div>
+                <p class="text-[10px] text-gray-300">Showcase your business within a 5–15 km radius, targeting homeowners, parents, or specific income brackets.</p>
+              </div>
+
+              <div class="p-2.5 rounded-xl bg-brand-card/80 border border-white/10 space-y-0.5">
+                <div class="text-xs font-bold text-white flex items-center justify-between">
+                  <span>2. Peer Recommendation & Social Proof</span>
+                  <span class="text-[9px] text-emerald-400 bg-emerald-500/10 px-1.5 py-0.5 rounded">High Viral Factor</span>
+                </div>
+                <p class="text-[10px] text-gray-300">Facebook comments, shares, and family recommendations establish immediate trust that cold search ads cannot replicate.</p>
+              </div>
+
+              <div class="p-2.5 rounded-xl bg-brand-card/80 border border-white/10 space-y-0.5">
+                <div class="text-xs font-bold text-white flex items-center justify-between">
+                  <span>3. Retargeting Warm Visitors</span>
+                  <span class="text-[9px] text-brand-yellow bg-brand-yellow/10 px-1.5 py-0.5 rounded">Zero Leakage</span>
+                </div>
+                <p class="text-[10px] text-gray-300">Re-engage prospects who viewed your Yellows Page category, reminding them to finalize their inquiry before choosing a rival.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right 5 cols -->
+          <div class="col-span-5 relative">
+            <div class="rounded-2xl overflow-hidden shadow-2xl border border-indigo-500/30 aspect-[4/5] max-h-[350px] relative">
+              <img 
+                src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=1000&q=80" 
+                alt="Corporate Strategy Meeting" 
+                class="w-full h-full object-cover"
+              />
+              <div class="absolute inset-0 bg-gradient-to-t from-brand-dark/95 via-brand-dark/30 to-transparent"></div>
+              
+              <div class="absolute bottom-3 left-3 right-3 glass-card p-2.5 rounded-xl border border-indigo-500/40">
+                <div class="text-xs font-bold text-white">Meta Community Engine</div>
+                <div class="text-[10px] text-gray-300 mt-0.5">Converts passive social scrollers into verified, high-ticket local inquiries.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Slide Footer -->
+        <div class="flex items-center justify-between pt-3 border-t border-white/10 text-[11px] relative z-10 shrink-0">
+          <div class="flex items-center gap-2">
+            <span class="text-brand-yellow font-black font-display tracking-wider">YELLOWS PAGE</span>
+            <span class="text-gray-600">•</span>
+            <span class="text-gray-400">Direct Inquiries</span>
+            <span class="text-gray-600">•</span>
+            <a href="tel:88897018885" class="text-brand-yellow font-bold hover:underline flex items-center gap-1">
+              <span>📞</span> 88897018885
+            </a>
+          </div>
+          <div class="flex items-center gap-2">
+            <a href="https://www.yellowspage.com" target="_blank" class="text-brand-yellow font-bold tracking-wide hover:underline flex items-center gap-1.5 bg-brand-yellow/10 px-2.5 py-0.5 rounded-full border border-brand-yellow/20">
+              <span>🌐</span> www.yellowspage.com
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============================================================ -->
+      <!-- SLIDE 8: INSTAGRAM VISUAL & HIGH-CONVERSION LEADS -->
+      <!-- ============================================================ -->
+      <section class="slide-item w-full h-full flex flex-col justify-between p-8 md:p-12 relative hidden" data-slide="8">
+        <div class="flex items-center justify-between shrink-0">
+          <div class="flex items-center gap-2">
+            <span class="text-xs font-bold uppercase tracking-wider text-pink-400">Marketing Masterclass • Channel 3</span>
+            <span class="text-gray-500">•</span>
+            <span class="text-xs text-gray-300">Senior Marketing Manager Perspective</span>
+          </div>
+          <span class="text-xs text-brand-yellow font-display px-3 py-1 bg-brand-yellow/10 rounded-full border border-brand-yellow/20">Slide 08</span>
+        </div>
+
+        <div class="grid grid-cols-12 gap-8 items-center my-auto">
+          <!-- Left 7 cols -->
+          <div class="col-span-7 space-y-3.5">
+            <div class="inline-flex items-center gap-2 px-3 py-0.5 rounded bg-pink-500/10 border border-pink-500/30 text-xs text-pink-300 font-semibold">
+              <span>📸</span> Visual Authority & Modern Demographics
+            </div>
+
+            <h2 class="text-3xl md:text-4xl font-extrabold font-display text-white">
+              Instagram Visual <span class="text-pink-400">& High-Conversion Leads</span>
+            </h2>
+
+            <p class="text-xs text-gray-300 leading-relaxed">
+              Modern consumers buy with their eyes. Instagram is no longer just a photo app—it is the <strong>primary search engine for Millennial and Gen Z buyers</strong> seeking aesthetic proof before purchasing.
+            </p>
+
+            <div class="space-y-2">
+              <div class="p-2.5 rounded-xl bg-brand-card/80 border border-white/10 space-y-0.5">
+                <div class="text-xs font-bold text-white flex items-center justify-between">
+                  <span>1. Visual Validation & Portfolio Proof</span>
+                  <span class="text-[9px] text-pink-400 bg-pink-500/10 px-1.5 py-0.5 rounded">Aesthetic Trust</span>
+                </div>
+                <p class="text-[10px] text-gray-300">High-resolution portfolios, video reels, and client transformations eliminate skepticism and elevate business value.</p>
+              </div>
+
+              <div class="p-2.5 rounded-xl bg-brand-card/80 border border-white/10 space-y-0.5">
+                <div class="text-xs font-bold text-white flex items-center justify-between">
+                  <span>2. Frictionless 1-Tap DM Conversions</span>
+                  <span class="text-[9px] text-emerald-400 bg-emerald-500/10 px-1.5 py-0.5 rounded">Fastest Response</span>
+                </div>
+                <p class="text-[10px] text-gray-300">Direct Message integration turns an impulse like into an instant conversation and booking in less than 60 seconds.</p>
+              </div>
+
+              <div class="p-2.5 rounded-xl bg-brand-card/80 border border-white/10 space-y-0.5">
+                <div class="text-xs font-bold text-white flex items-center justify-between">
+                  <span>3. Premium Brand Halo Effect</span>
+                  <span class="text-[9px] text-brand-yellow bg-brand-yellow/10 px-1.5 py-0.5 rounded">Higher Margins</span>
+                </div>
+                <p class="text-[10px] text-gray-300">Businesses with verified, visually polished profiles command 20%–35% higher prices compared to plain unbranded competitors.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right 5 cols -->
+          <div class="col-span-5 relative">
+            <div class="rounded-2xl overflow-hidden shadow-2xl border border-pink-500/30 aspect-[4/5] max-h-[350px] relative">
+              <img 
+                src="https://images.unsplash.com/photo-1580894732444-8ecded7900cd?auto=format&fit=crop&w=1000&q=80" 
+                alt="Executive Business Presentation" 
+                class="w-full h-full object-cover"
+              />
+              <div class="absolute inset-0 bg-gradient-to-t from-brand-dark/95 via-brand-dark/30 to-transparent"></div>
+              
+              <div class="absolute bottom-3 left-3 right-3 glass-card p-2.5 rounded-xl border border-pink-500/40">
+                <div class="text-xs font-bold text-white">Visual Conversion Ratio</div>
+                <div class="text-[10px] text-gray-300 mt-0.5">Showcasing real work results drives 3.2x higher WhatsApp message initiation.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Slide Footer -->
+        <div class="flex items-center justify-between pt-3 border-t border-white/10 text-[11px] relative z-10 shrink-0">
+          <div class="flex items-center gap-2">
+            <span class="text-brand-yellow font-black font-display tracking-wider">YELLOWS PAGE</span>
+            <span class="text-gray-600">•</span>
+            <span class="text-gray-400">Direct Inquiries</span>
+            <span class="text-gray-600">•</span>
+            <a href="tel:88897018885" class="text-brand-yellow font-bold hover:underline flex items-center gap-1">
+              <span>📞</span> 88897018885
+            </a>
+          </div>
+          <div class="flex items-center gap-2">
+            <a href="https://www.yellowspage.com" target="_blank" class="text-brand-yellow font-bold tracking-wide hover:underline flex items-center gap-1.5 bg-brand-yellow/10 px-2.5 py-0.5 rounded-full border border-brand-yellow/20">
+              <span>🌐</span> www.yellowspage.com
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============================================================ -->
+      <!-- SLIDE 9: OMNICHANNEL ENGINE SYNERGY -->
+      <!-- ============================================================ -->
+      <section class="slide-item w-full h-full flex flex-col justify-between p-8 md:p-12 relative hidden" data-slide="9">
+        <div class="flex items-center justify-between shrink-0">
+          <div class="flex items-center gap-2">
+            <span class="text-xs font-bold uppercase tracking-wider text-brand-yellow">Omnichannel Synergies</span>
+            <span class="text-gray-500">•</span>
+            <span class="text-xs text-gray-300">The Growth Architecture</span>
+          </div>
+          <span class="text-xs text-brand-yellow font-display px-3 py-1 bg-brand-yellow/10 rounded-full border border-brand-yellow/20">Slide 09</span>
+        </div>
+
+        <div class="my-auto space-y-5">
+          <div class="text-center max-w-2xl mx-auto">
+            <h2 class="text-3xl md:text-4xl font-extrabold font-display text-white">
+              The <span class="text-brand-yellow">Tri-Engine Funnel</span> In Action
+            </h2>
+            <p class="text-xs text-gray-300 mt-1">
+              Yellows Page integrates all three customer touchpoints into one seamless, high-converting ecosystem.
+            </p>
+          </div>
+
+          <!-- 3 Columns Flow -->
+          <div class="grid grid-cols-3 gap-4">
+            <div class="glass-card p-4 rounded-2xl border-t-4 border-t-blue-400 space-y-2">
+              <div class="flex items-center justify-between">
+                <span class="text-xs font-bold uppercase text-blue-400">Engine 01</span>
+                <span class="text-lg">🔍</span>
+              </div>
+              <h3 class="text-sm font-bold text-white font-display">Google SEO</h3>
+              <p class="text-[11px] text-gray-300">Captures active shoppers searching on Google and directs them to your verified profile.</p>
+              <div class="pt-1 text-[9px] text-blue-300 font-semibold uppercase tracking-wider">Intent: "I need to buy now"</div>
+            </div>
+
+            <div class="glass-card p-4 rounded-2xl border-t-4 border-t-indigo-400 space-y-2">
+              <div class="flex items-center justify-between">
+                <span class="text-xs font-bold uppercase text-indigo-400">Engine 02</span>
+                <span class="text-lg">👥</span>
+              </div>
+              <h3 class="text-sm font-bold text-white font-display">Meta & Instagram</h3>
+              <p class="text-[11px] text-gray-300">Creates local buzz, demographic targeting, and social validation across social feeds.</p>
+              <div class="pt-1 text-[9px] text-indigo-300 font-semibold uppercase tracking-wider">Desire: "This looks trustworthy"</div>
+            </div>
+
+            <div class="glass-card-yellow p-4 rounded-2xl border-t-4 border-t-brand-yellow space-y-2">
+              <div class="flex items-center justify-between">
+                <span class="text-xs font-bold uppercase text-brand-yellow">Engine 03</span>
+                <span class="text-lg">⚡</span>
+              </div>
+              <h3 class="text-sm font-bold text-brand-yellow font-display">Yellows Page Hub</h3>
+              <p class="text-[11px] text-gray-200">The verified storefront where customer calls, WhatsApp messages, and deals are closed.</p>
+              <div class="pt-1 text-[9px] text-brand-yellow font-semibold uppercase tracking-wider">Action: "Direct Call / WhatsApp"</div>
+            </div>
+          </div>
+
+          <!-- Summary Strip -->
+          <div class="glass-card p-3 rounded-xl border border-white/10 flex items-center justify-between px-5">
+            <span class="text-xs text-gray-300 font-medium">Result of integrated multi-channel listing:</span>
+            <span class="text-xs font-bold text-brand-yellow font-display">Zero wasted ad spend • 100% direct customer ownership</span>
+          </div>
+        </div>
+
+        <!-- Slide Footer -->
+        <div class="flex items-center justify-between pt-3 border-t border-white/10 text-[11px] relative z-10 shrink-0">
+          <div class="flex items-center gap-2">
+            <span class="text-brand-yellow font-black font-display tracking-wider">YELLOWS PAGE</span>
+            <span class="text-gray-600">•</span>
+            <span class="text-gray-400">Direct Inquiries</span>
+            <span class="text-gray-600">•</span>
+            <a href="tel:88897018885" class="text-brand-yellow font-bold hover:underline flex items-center gap-1">
+              <span>📞</span> 88897018885
+            </a>
+          </div>
+          <div class="flex items-center gap-2">
+            <a href="https://www.yellowspage.com" target="_blank" class="text-brand-yellow font-bold tracking-wide hover:underline flex items-center gap-1.5 bg-brand-yellow/10 px-2.5 py-0.5 rounded-full border border-brand-yellow/20">
+              <span>🌐</span> www.yellowspage.com
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============================================================ -->
+      <!-- SLIDE 10: 3 MONTHS PACKAGE (15K) -->
+      <!-- ============================================================ -->
+      <section class="slide-item w-full h-full flex flex-col justify-between p-8 md:p-12 relative hidden" data-slide="10">
+        <div class="flex items-center justify-between shrink-0">
+          <div class="flex items-center gap-2">
+            <span class="text-xs font-bold uppercase tracking-wider text-brand-yellow">Tier 1 • Starter</span>
+            <span class="text-gray-500">•</span>
+            <span class="text-xs text-gray-300">Entry Investment</span>
+          </div>
+          <span class="text-xs text-brand-yellow font-display px-3 py-1 bg-brand-yellow/10 rounded-full border border-brand-yellow/20">Slide 10</span>
+        </div>
+
+        <div class="grid grid-cols-12 gap-8 items-center my-auto">
+          <!-- Left 5 cols: Pricing & Target -->
+          <div class="col-span-5 space-y-3.5">
+            <div class="inline-block px-3 py-0.5 rounded-full bg-brand-card border border-brand-border text-xs text-gray-300 font-medium">
+              3 Months Duration
+            </div>
+            
+            <h2 class="text-3xl md:text-4xl font-black font-display text-white">
+              Starter <span class="text-brand-yellow">Package</span>
+            </h2>
+
+            <div class="flex items-baseline gap-2">
+              <span class="text-4xl md:text-5xl font-extrabold font-display text-brand-yellow">₹15,000</span>
+              <span class="text-xs text-gray-400">/ 3 Months (₹5k/mo)</span>
+            </div>
+
+            <p class="text-xs text-gray-300 leading-relaxed">
+              Designed for emerging businesses, local professionals, and retail stores establishing their essential digital discovery footprint.
+            </p>
+
+            <div class="p-3 rounded-xl bg-brand-card/80 border border-white/10">
+              <div class="text-xs font-bold text-white">Guaranteed Cap</div>
+              <div class="text-base font-extrabold text-brand-yellow font-display mt-0.5">Up to 25 Leads / Month</div>
+              <div class="text-[10px] text-gray-400 mt-0.5">High-intent direct customer phone and chat contacts.</div>
+            </div>
+          </div>
+
+          <!-- Right 7 cols: Feature Checklist -->
+          <div class="col-span-7 bg-brand-card/60 p-4 rounded-2xl border border-white/10 space-y-2.5">
+            <div class="text-xs font-bold uppercase tracking-wider text-brand-yellow pb-1 border-b border-white/10">
+              Included Features & Deliverables:
+            </div>
+
+            <div class="grid grid-cols-2 gap-x-4 gap-y-1.5 text-xs text-gray-200">
+              <div class="flex items-center gap-2">
+                <span class="text-brand-yellow font-bold">✓</span>
+                <span>Verified Business Listing</span>
+              </div>
+              <div class="flex items-center gap-2">
+                <span class="text-brand-yellow font-bold">✓</span>
+                <span>Business Featured Image</span>
+              </div>
+              <div class="flex items-center gap-2">
+                <span class="text-brand-yellow font-bold">✓</span>
+                <span>Category & Subcategory</span>
+              </div>
+              <div class="flex items-center gap-2">
+                <span class="text-brand-yellow font-bold">✓</span>
+                <span>Business Contact Details</span>
+              </div>
+              <div class="flex items-center gap-2">
+                <span class="text-brand-yellow font-bold">✓</span>
+                <span>Direct 1-Tap Call Button</span>
+              </div>
+              <div class="flex items-center gap-2">
+                <span class="text-brand-yellow font-bold">✓</span>
+                <span>Instant WhatsApp Button</span>
+              </div>
+              <div class="flex items-center gap-2">
+                <span class="text-brand-yellow font-bold">✓</span>
+                <span>Website Link (Backlink)</span>
+              </div>
+              <div class="flex items-center gap-2">
+                <span class="text-brand-yellow font-bold">✓</span>
+                <span>Basic Inquiries Routing</span>
+              </div>
+              <div class="flex items-center gap-2">
+                <span class="text-brand-yellow font-bold">✓</span>
+                <span>Up to 25 Leads / Month</span>
+              </div>
+              <div class="flex items-center gap-2">
+                <span class="text-brand-yellow font-bold">✓</span>
+                <span>Customer Review System</span>
+              </div>
+              <div class="flex items-center gap-2">
+                <span class="text-brand-yellow font-bold">✓</span>
+                <span>Save & Share Profile</span>
+              </div>
+              <div class="flex items-center gap-2">
+                <span class="text-brand-yellow font-bold">✓</span>
+                <span>Basic Analytics Dashboard</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Slide Footer -->
+        <div class="flex items-center justify-between pt-3 border-t border-white/10 text-[11px] relative z-10 shrink-0">
+          <div class="flex items-center gap-2">
+            <span class="text-brand-yellow font-black font-display tracking-wider">YELLOWS PAGE</span>
+            <span class="text-gray-600">•</span>
+            <span class="text-gray-400">Direct Inquiries</span>
+            <span class="text-gray-600">•</span>
+            <a href="tel:88897018885" class="text-brand-yellow font-bold hover:underline flex items-center gap-1">
+              <span>📞</span> 88897018885
+            </a>
+          </div>
+          <div class="flex items-center gap-2">
+            <a href="https://www.yellowspage.com" target="_blank" class="text-brand-yellow font-bold tracking-wide hover:underline flex items-center gap-1.5 bg-brand-yellow/10 px-2.5 py-0.5 rounded-full border border-brand-yellow/20">
+              <span>🌐</span> www.yellowspage.com
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============================================================ -->
+      <!-- SLIDE 11: 6 MONTHS PACKAGE (25K) -->
+      <!-- ============================================================ -->
+      <section class="slide-item w-full h-full flex flex-col justify-between p-8 md:p-12 relative hidden" data-slide="11">
+        <div class="flex items-center justify-between shrink-0">
+          <div class="flex items-center gap-2">
+            <span class="text-xs font-bold uppercase tracking-wider text-emerald-400">Tier 2 • Growth</span>
+            <span class="text-gray-500">•</span>
+            <span class="text-xs text-gray-300">Most Popular Option</span>
+          </div>
+          <span class="text-xs text-brand-yellow font-display px-3 py-1 bg-brand-yellow/10 rounded-full border border-brand-yellow/20">Slide 11</span>
+        </div>
+
+        <div class="grid grid-cols-12 gap-8 items-center my-auto">
+          <!-- Left 5 cols -->
+          <div class="col-span-5 space-y-3.5">
+            <div class="inline-flex items-center gap-2 px-3 py-0.5 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-xs text-emerald-400 font-bold">
+              ★ Most Popular • 6 Months
+            </div>
+            
+            <h2 class="text-3xl md:text-4xl font-black font-display text-white">
+              Growth <span class="text-brand-yellow">Package</span>
+            </h2>
+
+            <div class="flex items-baseline gap-2">
+              <span class="text-4xl md:text-5xl font-extrabold font-display text-brand-yellow">₹25,000</span>
+              <span class="text-xs text-gray-400">/ 6 Months (~₹4.1k/mo)</span>
+            </div>
+
+            <p class="text-xs text-gray-300 leading-relaxed">
+              Engineered for expanding businesses looking to dominate local competitors with priority search placement and 3x lead capacity.
+            </p>
+
+            <div class="p-3 rounded-xl glass-card-yellow border border-brand-yellow/40">
+              <div class="text-xs font-bold text-white">Expanded Lead Cap</div>
+              <div class="text-base font-extrabold text-brand-yellow font-display mt-0.5">Up to 75 Leads / Month</div>
+              <div class="text-[10px] text-gray-300 mt-0.5">3x volume of Starter + Priority customer dispatch.</div>
+            </div>
+          </div>
+
+          <!-- Right 7 cols: Growth Perks Grid -->
+          <div class="col-span-7 bg-brand-card/70 p-4 rounded-2xl border border-white/10 space-y-3">
+            <div class="flex items-center justify-between pb-1 border-b border-white/10">
+              <span class="text-xs font-bold uppercase tracking-wider text-brand-yellow">Everything in Starter PLUS:</span>
+              <span class="text-[9px] bg-brand-yellow text-brand-dark px-2 py-0.5 rounded font-bold">Enhanced Suite</span>
+            </div>
+
+            <div class="grid grid-cols-2 gap-2.5 text-xs">
+              <div class="p-2 rounded-lg bg-brand-dark/50 border border-white/5 space-y-0.5">
+                <div class="font-bold text-white flex items-center gap-1.5">
+                  <span class="text-brand-yellow">⭐</span> Featured Listing
+                </div>
+                <div class="text-[10px] text-gray-300">Highlighted badge and prominent card styling.</div>
+              </div>
+
+              <div class="p-2 rounded-lg bg-brand-dark/50 border border-white/5 space-y-0.5">
+                <div class="font-bold text-white flex items-center gap-1.5">
+                  <span class="text-emerald-400">🔍</span> Higher Search Visibility
+                </div>
+                <div class="text-[10px] text-gray-300">Rank elevated above standard non-featured listings.</div>
+              </div>
+
+              <div class="p-2 rounded-lg bg-brand-dark/50 border border-white/5 space-y-0.5">
+                <div class="font-bold text-white flex items-center gap-1.5">
+                  <span class="text-blue-400">💬</span> Live Chat Integration
+                </div>
+                <div class="text-[10px] text-gray-300">Direct real-time chat with interested website visitors.</div>
+              </div>
+
+              <div class="p-2 rounded-lg bg-brand-dark/50 border border-white/5 space-y-0.5">
+                <div class="font-bold text-white flex items-center gap-1.5">
+                  <span class="text-purple-400">📥</span> Enquiry Management
+                </div>
+                <div class="text-[10px] text-gray-300">Message center to organize, tag, and track responses.</div>
+              </div>
+
+              <div class="p-2 rounded-lg bg-brand-dark/50 border border-white/5 space-y-0.5">
+                <div class="font-bold text-white flex items-center gap-1.5">
+                  <span class="text-amber-400">📱</span> Review QR Standee
+                </div>
+                <div class="text-[10px] text-gray-300">Ready-to-print QR for counters to capture reviews.</div>
+              </div>
+
+              <div class="p-2 rounded-lg bg-brand-dark/50 border border-white/5 space-y-0.5">
+                <div class="font-bold text-white flex items-center gap-1.5">
+                  <span class="text-rose-400">📢</span> Ad Eligibility
+                </div>
+                <div class="text-[10px] text-gray-300">Eligible for platform-wide promotional spots.</div>
+              </div>
+            </div>
+
+            <div class="text-[10px] text-emerald-400 font-medium flex items-center gap-1.5 pt-0.5">
+              <span>✓ Priority Listing Placement & Advanced Business Analytics Included</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Slide Footer -->
+        <div class="flex items-center justify-between pt-3 border-t border-white/10 text-[11px] relative z-10 shrink-0">
+          <div class="flex items-center gap-2">
+            <span class="text-brand-yellow font-black font-display tracking-wider">YELLOWS PAGE</span>
+            <span class="text-gray-600">•</span>
+            <span class="text-gray-400">Direct Inquiries</span>
+            <span class="text-gray-600">•</span>
+            <a href="tel:88897018885" class="text-brand-yellow font-bold hover:underline flex items-center gap-1">
+              <span>📞</span> 88897018885
+            </a>
+          </div>
+          <div class="flex items-center gap-2">
+            <a href="https://www.yellowspage.com" target="_blank" class="text-brand-yellow font-bold tracking-wide hover:underline flex items-center gap-1.5 bg-brand-yellow/10 px-2.5 py-0.5 rounded-full border border-brand-yellow/20">
+              <span>🌐</span> www.yellowspage.com
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============================================================ -->
+      <!-- SLIDE 12: 1 YEAR ENTERPRISE PACKAGE (55K) -->
+      <!-- ============================================================ -->
+      <section class="slide-item w-full h-full flex flex-col justify-between p-8 md:p-12 relative hidden" data-slide="12">
+        <div class="flex items-center justify-between shrink-0">
+          <div class="flex items-center gap-2">
+            <span class="text-xs font-bold uppercase tracking-wider text-amber-400">Tier 3 • Annual Dominance</span>
+            <span class="text-gray-500">•</span>
+            <span class="text-xs text-gray-300">Maximum ROI & Category Authority</span>
+          </div>
+          <span class="text-xs text-brand-yellow font-display px-3 py-1 bg-brand-yellow/10 rounded-full border border-brand-yellow/20">Slide 12</span>
+        </div>
+
+        <div class="grid grid-cols-12 gap-8 items-center my-auto">
+          <!-- Left 5 cols -->
+          <div class="col-span-5 space-y-3.5">
+            <div class="inline-flex items-center gap-2 px-3 py-0.5 rounded-full bg-brand-yellow/20 border border-brand-yellow/40 text-xs text-brand-yellow font-bold">
+              👑 Ultimate Market Leader • 1 Year
+            </div>
+            
+            <h2 class="text-3xl md:text-4xl font-black font-display text-white">
+              Enterprise <span class="text-brand-yellow">1-Year</span>
+            </h2>
+
+            <div class="flex items-baseline gap-2">
+              <span class="text-4xl md:text-5xl font-extrabold font-display text-brand-yellow">₹55,000</span>
+              <span class="text-xs text-gray-400">/ 12 Months (~₹4.5k/mo)</span>
+            </div>
+
+            <p class="text-xs text-gray-300 leading-relaxed">
+              The definitive solution for established industry leaders who demand complete category supremacy and unrestricted lead volume.
+            </p>
+
+            <div class="p-3 rounded-xl bg-gradient-to-r from-brand-yellow/20 to-amber-500/20 border border-brand-yellow/50">
+              <div class="text-xs font-bold text-white uppercase tracking-wider">Unrestricted Limits</div>
+              <div class="text-lg font-black text-brand-yellow font-display mt-0.5">UNLIMITED Leads & Enquiries</div>
+              <div class="text-[10px] text-gray-200 mt-0.5">Zero monthly caps • Full unfiltered direct customer volume.</div>
+            </div>
+          </div>
+
+          <!-- Right 7 cols: Enterprise Elite Perks -->
+          <div class="col-span-7 bg-brand-card/80 p-4 rounded-2xl border border-brand-yellow/30 space-y-3">
+            <div class="flex items-center justify-between pb-1 border-b border-white/10">
+              <span class="text-xs font-bold uppercase tracking-wider text-brand-yellow">Everything in Growth PLUS:</span>
+              <span class="text-[9px] bg-amber-400 text-brand-dark px-2 py-0.5 rounded font-extrabold uppercase">VIP Authority</span>
+            </div>
+
+            <div class="grid grid-cols-2 gap-2.5 text-xs">
+              <div class="p-2 rounded-lg bg-brand-dark/70 border border-brand-yellow/20 space-y-0.5">
+                <div class="font-bold text-brand-yellow flex items-center gap-1.5">
+                  <span>🥇</span> Top Search Placement
+                </div>
+                <div class="text-[10px] text-gray-300">Guaranteed #1 placement in your primary category.</div>
+              </div>
+
+              <div class="p-2 rounded-lg bg-brand-dark/70 border border-brand-yellow/20 space-y-0.5">
+                <div class="font-bold text-white flex items-center gap-1.5">
+                  <span>💎</span> Premium Badge
+                </div>
+                <div class="text-[10px] text-gray-300">Exclusive Verified Gold Enterprise badge on profile.</div>
+              </div>
+
+              <div class="p-2 rounded-lg bg-brand-dark/70 border border-brand-yellow/20 space-y-0.5">
+                <div class="font-bold text-white flex items-center gap-1.5">
+                  <span>🚀</span> Ad Promotion
+                </div>
+                <div class="text-[10px] text-gray-300">Featured banner ads running on platform search pages.</div>
+              </div>
+
+              <div class="p-2 rounded-lg bg-brand-dark/70 border border-brand-yellow/20 space-y-0.5">
+                <div class="font-bold text-white flex items-center gap-1.5">
+                  <span>📈</span> Advanced Analytics
+                </div>
+                <div class="text-[10px] text-gray-300">Conversion funnels, competitor benchmark analysis.</div>
+              </div>
+
+              <div class="p-2 rounded-lg bg-brand-dark/70 border border-brand-yellow/20 space-y-0.5">
+                <div class="font-bold text-white flex items-center gap-1.5">
+                  <span>⚡</span> Priority Support
+                </div>
+                <div class="text-[10px] text-gray-300">Direct dedicated WhatsApp concierge for profile updates.</div>
+              </div>
+
+              <div class="p-2 rounded-lg bg-brand-dark/70 border border-brand-yellow/20 space-y-0.5">
+                <div class="font-bold text-white flex items-center gap-1.5">
+                  <span>🌐</span> 365-Day Search Dominance
+                </div>
+                <div class="text-[10px] text-gray-300">Maximum organic search indexation locked for 1 full year.</div>
+              </div>
+            </div>
+
+            <div class="text-[10px] text-brand-yellow font-semibold flex items-center gap-1.5 pt-0.5">
+              <span>✓ Includes Premium Featured Listing, Unlimited Enquiries & Live Chat</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Slide Footer -->
+        <div class="flex items-center justify-between pt-3 border-t border-white/10 text-[11px] relative z-10 shrink-0">
+          <div class="flex items-center gap-2">
+            <span class="text-brand-yellow font-black font-display tracking-wider">YELLOWS PAGE</span>
+            <span class="text-gray-600">•</span>
+            <span class="text-gray-400">Direct Inquiries</span>
+            <span class="text-gray-600">•</span>
+            <a href="tel:88897018885" class="text-brand-yellow font-bold hover:underline flex items-center gap-1">
+              <span>📞</span> 88897018885
+            </a>
+          </div>
+          <div class="flex items-center gap-2">
+            <a href="https://www.yellowspage.com" target="_blank" class="text-brand-yellow font-bold tracking-wide hover:underline flex items-center gap-1.5 bg-brand-yellow/10 px-2.5 py-0.5 rounded-full border border-brand-yellow/20">
+              <span>🌐</span> www.yellowspage.com
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============================================================ -->
+      <!-- SLIDE 13: VIP BESPOKE PACKAGE (MANY MORE BENEFITS) -->
+      <!-- ============================================================ -->
+      <section class="slide-item w-full h-full flex flex-col justify-between p-8 md:p-12 relative hidden" data-slide="13">
+        <div class="flex items-center justify-between shrink-0">
+          <div class="flex items-center gap-2">
+            <span class="text-xs font-bold uppercase tracking-wider text-brand-yellow">Tier 4 • Custom Enterprise</span>
+            <span class="text-gray-500">•</span>
+            <span class="text-xs text-gray-300">Tailored Partnerships</span>
+          </div>
+          <span class="text-xs text-brand-yellow font-display px-3 py-1 bg-brand-yellow/10 rounded-full border border-brand-yellow/20">Slide 13</span>
+        </div>
+
+        <div class="grid grid-cols-12 gap-8 items-center my-auto">
+          <!-- Left 5 cols -->
+          <div class="col-span-5 space-y-3.5">
+            <div class="inline-flex items-center gap-2 px-3 py-0.5 rounded-full bg-purple-500/10 border border-purple-500/30 text-xs text-purple-300 font-bold">
+              ✦ Tailored Solution • Custom Pricing
+            </div>
+            
+            <h2 class="text-3xl md:text-4xl font-black font-display text-white">
+              VIP <span class="text-brand-yellow">Bespoke Suite</span>
+            </h2>
+
+            <div class="text-2xl font-bold font-display text-gray-200">
+              Many More <span class="text-brand-yellow">Exclusive Benefits</span>
+            </div>
+
+            <p class="text-xs text-gray-300 leading-relaxed">
+              Crafted specifically for multi-location enterprises, corporate franchises, and premium brands requiring white-glove management and dedicated marketing firepower.
+            </p>
+
+            <div class="p-3 rounded-xl glass-card border border-purple-500/30">
+              <div class="text-xs font-bold text-purple-300">Custom Campaign Design</div>
+              <div class="text-[10px] text-gray-300 mt-0.5">Pricing customized based on your business size, city expansion targets, and omni-channel requirements.</div>
+            </div>
+          </div>
+
+          <!-- Right 7 cols: VIP Features Grid -->
+          <div class="col-span-7 bg-brand-card/70 p-4 rounded-2xl border border-white/10 space-y-2.5">
+            <div class="text-xs font-bold uppercase tracking-wider text-brand-yellow pb-1 border-b border-white/10">
+              VIP Elite Privileges:
+            </div>
+
+            <div class="space-y-2 text-xs text-gray-200">
+              <div class="flex items-start gap-2.5 p-2 rounded-lg bg-brand-dark/40 border border-white/5">
+                <span class="text-brand-yellow text-sm font-bold">✓</span>
+                <div>
+                  <strong class="text-white">Multi-Location & Franchise Management:</strong>
+                  <span class="text-gray-300 text-[10px] block">Unified dashboard to control listings across multiple branches and cities.</span>
+                </div>
+              </div>
+
+              <div class="flex items-start gap-2.5 p-2 rounded-lg bg-brand-dark/40 border border-white/5">
+                <span class="text-brand-yellow text-sm font-bold">✓</span>
+                <div>
+                  <strong class="text-white">Dedicated Growth Account Manager:</strong>
+                  <span class="text-gray-300 text-[10px] block">Direct 1-on-1 marketing strategist overseeing your profile and review velocity.</span>
+                </div>
+              </div>
+
+              <div class="flex items-start gap-2.5 p-2 rounded-lg bg-brand-dark/40 border border-white/5">
+                <span class="text-brand-yellow text-sm font-bold">✓</span>
+                <div>
+                  <strong class="text-white">Custom Meta & Google Ad Campaigns:</strong>
+                  <span class="text-gray-300 text-[10px] block">Co-branded paid ad execution targeting your exact zip codes with zero ad-management headache.</span>
+                </div>
+              </div>
+
+              <div class="flex items-start gap-2.5 p-2 rounded-lg bg-brand-dark/40 border border-white/5">
+                <span class="text-brand-yellow text-sm font-bold">✓</span>
+                <div>
+                  <strong class="text-white">CRM & WhatsApp API Webhook Sync:</strong>
+                  <span class="text-gray-300 text-[10px] block">Instant automatic dispatch of inquiries directly into your internal sales CRM.</span>
+                </div>
+              </div>
+
+              <div class="flex items-start gap-2.5 p-2 rounded-lg bg-brand-dark/40 border border-white/5">
+                <span class="text-brand-yellow text-sm font-bold">✓</span>
+                <div>
+                  <strong class="text-white">Homepage Spotlight & Category Exclusivity:</strong>
+                  <span class="text-gray-300 text-[10px] block">Prime real estate visibility on Yellows Page home and regional portals.</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Slide Footer -->
+        <div class="flex items-center justify-between pt-3 border-t border-white/10 text-[11px] relative z-10 shrink-0">
+          <div class="flex items-center gap-2">
+            <span class="text-brand-yellow font-black font-display tracking-wider">YELLOWS PAGE</span>
+            <span class="text-gray-600">•</span>
+            <span class="text-gray-400">Direct Inquiries</span>
+            <span class="text-gray-600">•</span>
+            <a href="tel:88897018885" class="text-brand-yellow font-bold hover:underline flex items-center gap-1">
+              <span>📞</span> 88897018885
+            </a>
+          </div>
+          <div class="flex items-center gap-2">
+            <a href="https://www.yellowspage.com" target="_blank" class="text-brand-yellow font-bold tracking-wide hover:underline flex items-center gap-1.5 bg-brand-yellow/10 px-2.5 py-0.5 rounded-full border border-brand-yellow/20">
+              <span>🌐</span> www.yellowspage.com
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============================================================ -->
+      <!-- SLIDE 14: CONTACT US & NEXT STEPS -->
+      <!-- ============================================================ -->
+      <section class="slide-item w-full h-full flex flex-col justify-between p-8 md:p-12 relative hidden" data-slide="14">
+        <div class="flex items-center justify-between shrink-0">
+          <div class="flex items-center gap-2">
+            <span class="text-xs font-bold uppercase tracking-wider text-brand-yellow">Get Started</span>
+            <span class="text-gray-500">•</span>
+            <span class="text-xs text-gray-300">Launch Your Presence</span>
+          </div>
+          <span class="text-xs text-brand-yellow font-display px-3 py-1 bg-brand-yellow/10 rounded-full border border-brand-yellow/20">Slide 14 • Closing</span>
+        </div>
+
+        <div class="grid grid-cols-12 gap-8 items-center my-auto">
+          <!-- Left 7 cols: Call to action & Steps -->
+          <div class="col-span-7 space-y-4">
+            <h2 class="text-3xl md:text-5xl font-black font-display text-white leading-tight">
+              Ready to Claim Your <br/>
+              <span class="yellow-gradient-text">Category Dominance?</span>
+            </h2>
+
+            <p class="text-xs text-gray-300 max-w-xl">
+              Partner with Yellows Page today. Start converting local online searches into loyal, paying customers.
+            </p>
+
+            <!-- 3 Simple Steps -->
+            <div class="grid grid-cols-3 gap-3">
+              <div class="p-2.5 rounded-xl bg-brand-card/70 border border-white/10 space-y-0.5">
+                <div class="text-brand-yellow font-bold text-xs font-display">STEP 01</div>
+                <div class="text-xs font-bold text-white">Select Package</div>
+                <div class="text-[10px] text-gray-400">Choose Starter, Growth, Enterprise, or VIP.</div>
+              </div>
+
+              <div class="p-2.5 rounded-xl bg-brand-card/70 border border-white/10 space-y-0.5">
+                <div class="text-brand-yellow font-bold text-xs font-display">STEP 02</div>
+                <div class="text-xs font-bold text-white">Profile Setup</div>
+                <div class="text-[10px] text-gray-400">We verify your details, photos & catalog.</div>
+              </div>
+
+              <div class="p-2.5 rounded-xl bg-brand-card/70 border border-white/10 space-y-0.5">
+                <div class="text-brand-yellow font-bold text-xs font-display">STEP 03</div>
+                <div class="text-xs font-bold text-white">Go Live</div>
+                <div class="text-[10px] text-gray-400">Start receiving direct calls and WhatsApp leads.</div>
+              </div>
+            </div>
+
+            <!-- Contact Details Card -->
+            <div class="glass-card p-3.5 rounded-xl border border-brand-yellow/30 flex items-center justify-between">
+              <div class="space-y-0.5">
+                <div class="text-[11px] font-bold text-gray-300 flex items-center gap-1.5">
+                  <span class="text-brand-yellow">📞</span> Phone / WhatsApp Contact:
+                </div>
+                <div class="text-base font-extrabold text-brand-yellow font-display tracking-wide">88897018885</div>
+              </div>
+              <div class="space-y-0.5 text-right">
+                <div class="text-[11px] font-bold text-gray-300 flex items-center justify-end gap-1.5">
+                  <span class="text-blue-400">🌐</span> Official Web Directory:
+                </div>
+                <div class="text-xs font-bold text-white hover:text-brand-yellow transition">www.yellowspage.com</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right 5 cols: Professional Executive Visual -->
+          <div class="col-span-5 relative">
+            <div class="rounded-2xl overflow-hidden shadow-2xl border border-white/15 aspect-[4/5] max-h-[350px] relative">
+              <img 
+                src="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=1000&q=80" 
+                alt="Corporate Leader" 
+                class="w-full h-full object-cover object-top"
+              />
+              <div class="absolute inset-0 bg-gradient-to-t from-brand-dark/95 via-transparent to-transparent"></div>
+              
+              <div class="absolute bottom-3 left-3 right-3 text-center glass-card p-2.5 rounded-xl border border-brand-yellow/30">
+                <div class="text-[10px] text-gray-300">Direct Inquiries Hot-line:</div>
+                <div class="text-sm font-extrabold text-brand-yellow font-display mt-0.5">88897018885</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Slide Footer -->
+        <div class="flex items-center justify-between pt-3 border-t border-white/10 text-[11px] relative z-10 shrink-0">
+          <div class="flex items-center gap-2">
+            <span class="text-brand-yellow font-black font-display tracking-wider">YELLOWS PAGE</span>
+            <span class="text-gray-600">•</span>
+            <span class="text-gray-400">Direct Inquiries</span>
+            <span class="text-gray-600">•</span>
+            <a href="tel:88897018885" class="text-brand-yellow font-bold hover:underline flex items-center gap-1">
+              <span>📞</span> 88897018885
+            </a>
+          </div>
+          <div class="flex items-center gap-2">
+            <a href="https://www.yellowspage.com" target="_blank" class="text-brand-yellow font-bold tracking-wide hover:underline flex items-center gap-1.5 bg-brand-yellow/10 px-2.5 py-0.5 rounded-full border border-brand-yellow/20">
+              <span>🌐</span> www.yellowspage.com
+            </a>
+          </div>
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <!-- BOTTOM THUMBNAIL / SLIDE SELECTOR STRIP (NO-PRINT) -->
+  <footer class="no-print bg-[#0D1527]/95 border-t border-brand-border px-6 py-2.5 z-40 overflow-x-auto flex items-center justify-start space-x-2">
+    <div class="text-[11px] font-bold text-brand-muted uppercase tracking-wider shrink-0 mr-2">Slides:</div>
+    <div class="flex items-center space-x-1.5" id="thumbnailButtons">
+      <!-- Generated dynamically by script -->
+    </div>
+  </footer>
+
+  <!-- GRID OVERVIEW MODAL (NO-PRINT) -->
+  <div id="gridModal" class="no-print fixed inset-0 bg-black/85 backdrop-blur-md z-50 p-8 overflow-y-auto hidden">
+    <div class="max-w-6xl mx-auto space-y-6">
+      <div class="flex items-center justify-between border-b border-brand-border pb-4">
+        <div>
+          <h2 class="text-xl font-bold text-white font-display">All 14 Slides Overview</h2>
+          <p class="text-xs text-brand-muted">Click any slide card to jump directly into presentation mode</p>
+        </div>
+        <button onclick="toggleGridMode()" class="px-3 py-1.5 rounded-lg bg-brand-card hover:bg-brand-border text-white text-xs border border-brand-border">
+          ✕ Close Overview
+        </button>
+      </div>
+
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4" id="gridCardsContainer">
+        <!-- Rendered dynamically -->
+      </div>
+    </div>
+  </div>
+
+  <script>
+    let currentSlide = 1;
+    const totalSlides = 14;
+
+    const slideTitles = [
+      "01. What is Yellows Page",
+      "02. How You Get Benefited",
+      "03. Why Choose Yellows Page",
+      "04. Market Urgency & Importance",
+      "05. What You Get (Listing Features)",
+      "06. Google SEO & High-Intent Leads",
+      "07. Facebook / Meta Targeted Leads",
+      "08. Instagram Visual Conversions",
+      "09. The Omnichannel Synergies",
+      "10. 3 Months Starter (₹15,000)",
+      "11. 6 Months Growth (₹25,000)",
+      "12. 1 Year Enterprise (₹55,000)",
+      "13. VIP Bespoke (Many More Benefits)",
+      "14. Contact Us & Next Steps"
+    ];
+
+    function showSlide(slideNumber) {
+      if (slideNumber < 1) slideNumber = 1;
+      if (slideNumber > totalSlides) slideNumber = totalSlides;
+
+      currentSlide = slideNumber;
+
+      // Update visibility
+      document.querySelectorAll('.slide-item').forEach((slide) => {
+        const index = parseInt(slide.getAttribute('data-slide'));
+        if (index === currentSlide) {
+          slide.classList.remove('hidden');
+        } else {
+          slide.classList.add('hidden');
+        }
+      });
+
+      // Update indicator
+      const padIndex = currentSlide < 10 ? '0' + currentSlide : currentSlide;
+      document.getElementById('slideIndicator').innerText = `${padIndex} / 14`;
+
+      // Update thumbnail active states
+      document.querySelectorAll('.thumb-btn').forEach((btn, idx) => {
+        if (idx + 1 === currentSlide) {
+          btn.classList.add('bg-brand-yellow', 'text-brand-dark', 'font-bold');
+          btn.classList.remove('bg-brand-card', 'text-gray-300');
+        } else {
+          btn.classList.remove('bg-brand-yellow', 'text-brand-dark', 'font-bold');
+          btn.classList.add('bg-brand-card', 'text-gray-300');
+        }
+      });
+    }
+
+    function nextSlide() {
+      if (currentSlide < totalSlides) {
+        showSlide(currentSlide + 1);
+      }
+    }
+
+    function prevSlide() {
+      if (currentSlide > 1) {
+        showSlide(currentSlide - 1);
+      }
+    }
+
+    // Keyboard navigation
+    window.addEventListener('keydown', (e) => {
+      if (e.key === 'ArrowRight' || e.key === 'Space') {
+        e.preventDefault();
+        nextSlide();
+      } else if (e.key === 'ArrowLeft') {
+        e.preventDefault();
+        prevSlide();
+      } else if (e.key.toLowerCase() === 'f') {
+        toggleFullscreen();
+      } else if (e.key === 'Escape') {
+        document.getElementById('gridModal').classList.add('hidden');
+      }
+    });
+
+    function toggleFullscreen() {
+      const stage = document.getElementById('slideStage');
+      if (!document.fullscreenElement) {
+        stage.requestFullscreen().catch(err => {
+          alert(`Error attempting to enable fullscreen: ${err.message}`);
+        });
+      } else {
+        document.exitFullscreen();
+      }
+    }
+
+    function toggleGridMode() {
+      const modal = document.getElementById('gridModal');
+      modal.classList.toggle('hidden');
+    }
+
+    // Initialize Bottom Thumbnails and Grid Modal
+    function initNavigation() {
+      const thumbsContainer = document.getElementById('thumbnailButtons');
+      const gridContainer = document.getElementById('gridCardsContainer');
+
+      slideTitles.forEach((title, idx) => {
+        const slideIndex = idx + 1;
+
+        // Bottom strip button
+        const btn = document.createElement('button');
+        btn.className = `thumb-btn px-2.5 py-1 text-[11px] rounded-md transition whitespace-nowrap bg-brand-card text-gray-300 hover:bg-brand-border`;
+        btn.innerText = title.split('. ')[0];
+        btn.title = title;
+        btn.onclick = () => showSlide(slideIndex);
+        thumbsContainer.appendChild(btn);
+
+        // Grid modal card
+        const card = document.createElement('div');
+        card.className = "bg-brand-card hover:border-brand-yellow/50 border border-brand-border p-4 rounded-xl cursor-pointer transition transform hover:-translate-y-1 space-y-2";
+        card.onclick = () => {
+          showSlide(slideIndex);
+          toggleGridMode();
+        };
+        card.innerHTML = `
+          <div class="flex items-center justify-between">
+            <span class="text-[10px] font-bold text-brand-yellow uppercase">Slide ${slideIndex < 10 ? '0' + slideIndex : slideIndex}</span>
+            <span class="text-xs text-brand-muted">➔</span>
+          </div>
+          <div class="text-xs font-bold text-white font-display">${title.split('. ')[1]}</div>
+        `;
+        gridContainer.appendChild(card);
+      });
+
+      showSlide(1);
+    }
+
+    window.onload = initNavigation;
+  </script>
+</body>
+</html>
