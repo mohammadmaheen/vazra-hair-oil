@@ -1,3 +1,4 @@
+import { getAssetUrl } from '../utils/assets';
 import React, { useState } from 'react';
 import { Star, ChevronLeft, ChevronRight } from 'lucide-react';
 
@@ -7,21 +8,21 @@ export const TrustReviews: React.FC = () => {
       id: 'rev-sana',
       name: 'Sana, Hyderabad',
       comment: '“My hair fall reduced in 3 weeks! Absolutely love this oil.”',
-      avatar: '/images/avatar-sana.jpg',
+      avatar: getAssetUrl('/images/avatar-sana.jpg'),
       rating: 5,
     },
     {
       id: 'rev-rohit',
       name: 'Rohit, Bangalore',
       comment: '“My hair feels thicker and stronger now. Highly recommended!”',
-      avatar: '/images/avatar-rohit.jpg',
+      avatar: getAssetUrl('/images/avatar-rohit.jpg'),
       rating: 5,
     },
     {
       id: 'rev-priya',
       name: 'Priya, Chennai',
       comment: '“The best herbal hair oil I’ve ever used. Smells amazing!”',
-      avatar: '/images/avatar-priya.jpg',
+      avatar: getAssetUrl('/images/avatar-priya.jpg'),
       rating: 5,
     },
   ];

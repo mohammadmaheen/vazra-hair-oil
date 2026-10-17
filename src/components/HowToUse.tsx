@@ -1,3 +1,4 @@
+import { getAssetUrl } from '../utils/assets';
 import React, { useState, useEffect } from 'react';
 import { Sparkles, Clock, CheckCircle, ChevronRight, ChevronLeft, Play, Pause, ShieldCheck, Heart, Sparkle } from 'lucide-react';
 
@@ -28,7 +29,7 @@ export const HowToUse: React.FC = () => {
       tip: 'Warming the oil slightly between your palms helps release the aromatic coconut and herbal essence, preparing it for deeper absorption into your scalp follicles.',
       duration: '1 - 2 mins',
       frequency: '2-3 times a week',
-      image: '/images/how-to-use-step1.jpg',
+      image: getAssetUrl('/images/how-to-use-step1.jpg'),
       badge: 'Heat Activation'
     },
     {
@@ -40,7 +41,7 @@ export const HowToUse: React.FC = () => {
       tip: 'Circular massage promotes blood circulation to hair follicles and provides a deeply calming, stress-relieving ritual after a busy day.',
       duration: '5 - 10 mins',
       frequency: 'Gentle pressure',
-      image: '/images/how-to-use-step2.jpg',
+      image: getAssetUrl('/images/how-to-use-step2.jpg'),
       badge: 'Root Stimulation'
     },
     {
@@ -52,7 +53,7 @@ export const HowToUse: React.FC = () => {
       tip: 'Wrapping your hair in a warm damp towel for 10 minutes helps open the cuticle scales slightly, allowing herbs to nourish deep into the roots.',
       duration: '1-2 hrs / Overnight',
       frequency: 'Deep penetration',
-      image: '/images/how-to-use-step3.jpg',
+      image: getAssetUrl('/images/how-to-use-step3.jpg'),
       badge: 'Herbal Infusion'
     },
     {
@@ -64,7 +65,7 @@ export const HowToUse: React.FC = () => {
       tip: 'Lukewarm or cool water seals the hair cuticles, locking in moisture and leaving a natural, healthy shine throughout the day.',
       duration: 'Lukewarm rinse',
       frequency: 'Soft & lustrous finish',
-      image: '/images/how-to-use-step4.jpg',
+      image: getAssetUrl('/images/how-to-use-step4.jpg'),
       badge: 'Silky Gloss & Bounce'
     }
   ];

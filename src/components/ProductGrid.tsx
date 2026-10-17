@@ -1,3 +1,4 @@
+import { getAssetUrl } from '../utils/assets';
 import React, { useState } from 'react';
 import { ShoppingBag, Star } from 'lucide-react';
 import { useCart } from '../context/CartContext';
@@ -16,7 +17,7 @@ export const ProductGrid: React.FC = () => {
       rating: '4.8',
       price: 199,
       volume: '100 ml',
-      image: '/images/prod-original-hd.jpg',
+      image: getAssetUrl('/images/prod-original-hd.jpg'),
     },
     {
       id: 'prod-antihairfall',
@@ -25,7 +26,7 @@ export const ProductGrid: React.FC = () => {
       rating: '4.7',
       price: 399,
       volume: '200 ml',
-      image: '/images/prod-antihairfall-hd.jpg',
+      image: getAssetUrl('/images/prod-antihairfall-hd.jpg'),
     },
     {
       id: 'prod-scalpcare',
@@ -34,7 +35,7 @@ export const ProductGrid: React.FC = () => {
       rating: '4.8',
       price: 399,
       volume: '200 ml',
-      image: '/images/prod-scalpcare-hd.jpg',
+      image: getAssetUrl('/images/prod-scalpcare-hd.jpg'),
     },
     {
       id: 'prod-onion',
@@ -43,7 +44,7 @@ export const ProductGrid: React.FC = () => {
       rating: '4.6',
       price: 199,
       volume: '100 ml',
-      image: '/images/prod-onion-hd.jpg',
+      image: getAssetUrl('/images/prod-onion-hd.jpg'),
     },
   ];
 
@@ -56,14 +57,14 @@ export const ProductGrid: React.FC = () => {
       */}
       <div className="absolute top-0 left-0 w-24 sm:w-36 pointer-events-none opacity-45 select-none animate-sway-left">
         <img
-          src="/images/ingredients-leaves-left.png"
+          src={getAssetUrl('/images/ingredients-leaves-left.png')}
           alt=""
           className="w-full h-auto object-contain -translate-y-1/3"
         />
       </div>
       <div className="absolute top-0 right-0 w-24 sm:w-36 pointer-events-none opacity-45 select-none animate-sway-right">
         <img
-          src="/images/ingredients-leaves-right.png"
+          src={getAssetUrl('/images/ingredients-leaves-right.png')}
           alt=""
           className="w-full h-auto object-contain -translate-y-1/3"
         />

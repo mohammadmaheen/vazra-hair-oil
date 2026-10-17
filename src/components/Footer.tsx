@@ -1,3 +1,4 @@
+import { getAssetUrl } from '../utils/assets';
 import React, { useState } from 'react';
 import { ArrowRight, CheckCircle2 } from 'lucide-react';
 
@@ -32,7 +33,7 @@ export const Footer: React.FC = () => {
           
           {/* Left Leaf Accent */}
           <div className="hidden sm:block absolute -left-4 top-1/2 -translate-y-1/2 w-16 opacity-50 pointer-events-none select-none">
-            <img src="/images/ingredients-leaves-left.png" alt="" className="w-full h-auto object-contain" />
+            <img src={getAssetUrl('/images/ingredients-leaves-left.png')} alt="" className="w-full h-auto object-contain" />
           </div>
 
           {/* Left: Headline & Subtitle */}
@@ -83,7 +84,7 @@ export const Footer: React.FC = () => {
 
           {/* Right Leaf Accent */}
           <div className="hidden sm:block absolute -right-4 top-1/2 -translate-y-1/2 w-16 opacity-50 pointer-events-none select-none">
-            <img src="/images/ingredients-leaves-right.png" alt="" className="w-full h-auto object-contain" />
+            <img src={getAssetUrl('/images/ingredients-leaves-right.png')} alt="" className="w-full h-auto object-contain" />
           </div>
 
         </div>
@@ -210,7 +211,7 @@ export const Footer: React.FC = () => {
             <div className="lg:col-span-2 flex flex-col items-start lg:items-end justify-between pt-2">
               <div className="flex items-center gap-3">
                 <img
-                  src="/images/ingredients-leaves-right.png"
+                  src={getAssetUrl('/images/ingredients-leaves-right.png')}
                   alt=""
                   className="w-12 h-12 object-contain opacity-80 filter brightness-125"
                 />

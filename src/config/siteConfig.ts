@@ -1,3 +1,4 @@
+import { getAssetUrl } from '../utils/assets';
 import { Product, Ingredient, Review, FAQItem } from '../types';
 
 export const SITE_CONFIG = {
@@ -47,7 +48,7 @@ export const SITE_CONFIG = {
       badge: 'Starter Pack',
       description: 'Ideal for trying Vazra for the first time or taking along on travels. Hand-infused with 15 herbal ingredients in pure coconut oil.',
       benefits: ['Gentle scalp nourishment', 'Convenient travel size', 'Handmade in small batches'],
-      image: '/images/bottle-100ml.png'
+      image: getAssetUrl('/images/bottle-100ml.png')
     },
     {
       id: 'vazra-combo-2x100ml',
@@ -61,7 +62,7 @@ export const SITE_CONFIG = {
       badge: 'Save ₹118 • Best Value',
       description: 'Our popular two-bottle bundle. Keep one at home and share one with family or gift traditional care to someone you love.',
       benefits: ['Special bundled discount', 'Two portable bottles', 'Perfect for family sharing'],
-      image: '/images/bottle-combo.png'
+      image: getAssetUrl('/images/bottle-combo.png')
     },
     {
       id: 'vazra-200ml',
@@ -75,7 +76,7 @@ export const SITE_CONFIG = {
       badge: 'Most Popular',
       description: 'The classic bottle designed for consistent weekly hair-care rituals. Sufficient for 1 to 2 months of regular scalp massage.',
       benefits: ['Lasts 6–8 weeks', 'Optimal weekly routine size', 'Deep root conditioning'],
-      image: '/images/bottle-200ml.png'
+      image: getAssetUrl('/images/bottle-200ml.png')
     },
     {
       id: 'vazra-500ml',
@@ -89,7 +90,7 @@ export const SITE_CONFIG = {
       badge: 'Family Size',
       description: 'Economic family bottle prepared for the whole household. Comes in an easy-to-pour container with natural herbal aroma.',
       benefits: ['Best for regular family use', 'Long-lasting value', 'Zero mineral oils & parabens'],
-      image: '/images/bottle-500ml.png'
+      image: getAssetUrl('/images/bottle-500ml.png')
     },
     {
       id: 'vazra-1000ml',
@@ -103,7 +104,7 @@ export const SITE_CONFIG = {
       badge: 'Maximum Value',
       description: 'Our maximum volume pack for dedicated traditional hair care lovers. Maximum savings on our authentic family recipe.',
       benefits: ['Ultimate per-ml savings', 'Stock for several months', 'Pure unadulterated formula'],
-      image: '/images/bottle-1000ml.png'
+      image: getAssetUrl('/images/bottle-1000ml.png')
     }
   ] as Product[],
 
@@ -113,7 +114,7 @@ export const SITE_CONFIG = {
       name: 'Cocos nucifera (Coconut Oil)',
       botanicalName: 'Cocos nucifera',
       commonName: 'Coconut Oil',
-      image: '/images/botanical/cocos-nucifera.jpg',
+      image: getAssetUrl('/images/botanical/cocos-nucifera.jpg'),
       shortRole: 'Deep Moisturization',
       traditionalRole: 'Traditional carrier base that deeply penetrates hair cuticles, sealing moisture and preventing dryness.',
       icon: '🥥',
@@ -123,7 +124,7 @@ export const SITE_CONFIG = {
       name: 'Murraya koenigii (Curry Leaves)',
       botanicalName: 'Murraya koenigii',
       commonName: 'Curry Leaves',
-      image: '/images/botanical/murraya-koenigii.jpg',
+      image: getAssetUrl('/images/botanical/murraya-koenigii.jpg'),
       shortRole: 'Prevents Premature Greying',
       traditionalRole: 'Rich in antioxidants and beta-carotene, traditionally cooked in oil to help maintain vibrant, healthy hair.',
       icon: '🍃',
@@ -133,7 +134,7 @@ export const SITE_CONFIG = {
       name: 'Phyllanthus emblica (Amla)',
       botanicalName: 'Phyllanthus emblica',
       commonName: 'Amla',
-      image: '/images/botanical/phyllanthus-emblica.jpg',
+      image: getAssetUrl('/images/botanical/phyllanthus-emblica.jpg'),
       shortRole: 'Root Strength & Vitality',
       traditionalRole: 'Naturally rich in Vitamin C, traditionally used to nourish the hair follicles and support natural hair strength and shine.',
       icon: '🌿',
@@ -143,7 +144,7 @@ export const SITE_CONFIG = {
       name: 'Eclipta prostrata (Bhringraj)',
       botanicalName: 'Eclipta prostrata',
       commonName: 'Bhringraj',
-      image: '/images/botanical/eclipta-prostrata.jpg',
+      image: getAssetUrl('/images/botanical/eclipta-prostrata.jpg'),
       shortRole: 'Promotes Hair Growth',
       traditionalRole: 'Known in Ayurveda as the "ruler of hair," traditionally revered for soothing the scalp and maintaining healthy texture.',
       icon: '🌱',
@@ -153,7 +154,7 @@ export const SITE_CONFIG = {
       name: 'Hibiscus rosa-sinensis (Hibiscus)',
       botanicalName: 'Hibiscus rosa-sinensis',
       commonName: 'Hibiscus',
-      image: '/images/botanical/hibiscus-rosa-sinensis.jpg',
+      image: getAssetUrl('/images/botanical/hibiscus-rosa-sinensis.jpg'),
       shortRole: 'Natural Sheen & Softness',
       traditionalRole: 'Packed with natural amino acids and mucilage that condition hair strands, lending a silky, healthy natural gloss.',
       icon: '🌺',
@@ -163,7 +164,7 @@ export const SITE_CONFIG = {
       name: 'Azadirachta indica (Neem)',
       botanicalName: 'Azadirachta indica',
       commonName: 'Neem',
-      image: '/images/botanical/azadirachta-indica.jpg',
+      image: getAssetUrl('/images/botanical/azadirachta-indica.jpg'),
       shortRole: 'Purifying Scalp Care',
       traditionalRole: 'Renowned for maintaining a clean, clear scalp environment free from buildup and seasonal flakiness.',
       icon: '🌿',
@@ -173,7 +174,7 @@ export const SITE_CONFIG = {
       name: 'Trigonella foenum-graecum (Methi)',
       botanicalName: 'Trigonella foenum-graecum',
       commonName: 'Methi',
-      image: '/images/botanical/trigonella-foenum-graecum.jpg',
+      image: getAssetUrl('/images/botanical/trigonella-foenum-graecum.jpg'),
       shortRole: 'Reduces Hair Fall',
       traditionalRole: 'Contains natural proteins and lecithin that nourish dry scalps, soften coarse strands, and reduce styling friction.',
       icon: '🌾',
@@ -183,7 +184,7 @@ export const SITE_CONFIG = {
       name: 'Aloe barbadensis (Aloe Vera)',
       botanicalName: 'Aloe barbadensis',
       commonName: 'Aloe Vera',
-      image: '/images/botanical/aloe-barbadensis.jpg',
+      image: getAssetUrl('/images/botanical/aloe-barbadensis.jpg'),
       shortRole: 'Soothing Hydration',
       traditionalRole: 'Supplies gentle hydration and natural proteolytic enzymes that keep the scalp calm, cool, and moisturized.',
       icon: '🌵',
@@ -193,7 +194,7 @@ export const SITE_CONFIG = {
       name: 'Bacopa monnieri (Brahmi)',
       botanicalName: 'Bacopa monnieri',
       commonName: 'Brahmi',
-      image: '/images/botanical/bacopa-monnieri.jpg',
+      image: getAssetUrl('/images/botanical/bacopa-monnieri.jpg'),
       shortRole: 'Calming Scalp Massage',
       traditionalRole: 'Valued for centuries to promote relaxation during scalp massage while softening hair strands.',
       icon: '🍃',
@@ -203,7 +204,7 @@ export const SITE_CONFIG = {
       name: 'Sesamum indicum (Sesame Oil)',
       botanicalName: 'Sesamum indicum',
       commonName: 'Sesame Oil',
-      image: '/images/botanical/sesamum-indicum.jpg',
+      image: getAssetUrl('/images/botanical/sesamum-indicum.jpg'),
       shortRole: 'Nutrient-Rich Gloss',
       traditionalRole: 'Traditional nourishing seed extract celebrated for providing deep lipid conditioning and silky texture.',
       icon: '✨',
@@ -213,7 +214,7 @@ export const SITE_CONFIG = {
       name: 'Ricinus communis (Castor Oil)',
       botanicalName: 'Ricinus communis',
       commonName: 'Castor Oil',
-      image: '/images/botanical/ricinus-communis.jpg',
+      image: getAssetUrl('/images/botanical/ricinus-communis.jpg'),
       shortRole: 'Cuticle Sealing',
       traditionalRole: 'High in ricinoleic acid, renowned for sealing moisture into dry hair shafts and boosting thickness feel.',
       icon: '🌱',
@@ -223,7 +224,7 @@ export const SITE_CONFIG = {
       name: 'Allium cepa (Red Onion)',
       botanicalName: 'Allium cepa',
       commonName: 'Red Onion',
-      image: '/images/botanical/allium-cepa.jpg',
+      image: getAssetUrl('/images/botanical/allium-cepa.jpg'),
       shortRole: 'Sulfur-Rich Vitality',
       traditionalRole: 'Natural source of organic dietary sulfur that supports keratin vitality and scalp revivification.',
       icon: '🧅',
@@ -233,7 +234,7 @@ export const SITE_CONFIG = {
       name: 'Allium sativum (Garlic)',
       botanicalName: 'Allium sativum',
       commonName: 'Garlic',
-      image: '/images/botanical/allium-sativum.jpg',
+      image: getAssetUrl('/images/botanical/allium-sativum.jpg'),
       shortRole: 'Scalp Environment Defense',
       traditionalRole: 'Known in traditional botanical care for invigorating hair follicles and purifying the scalp surface.',
       icon: '🧄',
@@ -243,7 +244,7 @@ export const SITE_CONFIG = {
       name: 'Salvia rosmarinus (Rosemary)',
       botanicalName: 'Salvia rosmarinus',
       commonName: 'Rosemary',
-      image: '/images/botanical/salvia-rosmarinus.jpg',
+      image: getAssetUrl('/images/botanical/salvia-rosmarinus.jpg'),
       shortRole: 'Micro-Circulation & Luster',
       traditionalRole: 'Supports micro-circulation when massaged gently into the scalp and enhances overall hair sheen.',
       icon: '🌿',
@@ -253,7 +254,7 @@ export const SITE_CONFIG = {
       name: 'Nigella sativa (Black Seed)',
       botanicalName: 'Nigella sativa',
       commonName: 'Black Seed',
-      image: '/images/botanical/nigella-sativa.jpg',
+      image: getAssetUrl('/images/botanical/nigella-sativa.jpg'),
       shortRole: 'Moisture Balance & Resilience',
       traditionalRole: 'A prized traditional seed known for balancing scalp moisture and providing essential fatty acids to roots.',
       icon: '✨',

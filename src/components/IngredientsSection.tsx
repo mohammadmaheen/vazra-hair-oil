@@ -1,3 +1,4 @@
+import { getAssetUrl } from '../utils/assets';
 import React, { useState } from 'react';
 import { X, Check } from 'lucide-react';
 import { SITE_CONFIG } from '../config/siteConfig';
@@ -21,7 +22,7 @@ export const IngredientsSection: React.FC = () => {
       {/* Left Leaves Branch with Purple Buds */}
       <div className="absolute top-1/2 -translate-y-1/2 left-0 w-16 sm:w-24 md:w-28 lg:w-32 pointer-events-none z-20 select-none opacity-95">
         <img
-          src="/images/ingredients-leaves-left.png"
+          src={getAssetUrl('/images/ingredients-leaves-left.png')}
           alt="Natural botanical leaves"
           className="w-full h-auto object-contain block"
         />
@@ -30,7 +31,7 @@ export const IngredientsSection: React.FC = () => {
       {/* Right Leaves Branch with Purple Flower */}
       <div className="absolute top-1/2 -translate-y-1/2 right-0 w-16 sm:w-24 md:w-28 lg:w-32 pointer-events-none z-20 select-none opacity-95">
         <img
-          src="/images/ingredients-leaves-right.png"
+          src={getAssetUrl('/images/ingredients-leaves-right.png')}
           alt="Botanical flower and leaves"
           className="w-full h-auto object-contain block"
         />
