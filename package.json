@@ -4,8 +4,11 @@
   "version": "1.0.0",
   "type": "module",
   "scripts": {
+    "sync-images": "node scripts/sync-images.cjs",
+    "predev": "node scripts/sync-images.cjs",
     "dev": "vite",
-    "build": "tsc && vite build",
+    "prebuild": "node scripts/sync-images.cjs",
+    "build": "tsc && vite build && node scripts/sync-images.cjs",
     "preview": "vite preview"
   },
   "dependencies": {
