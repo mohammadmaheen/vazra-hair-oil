@@ -10,7 +10,7 @@ export function getAssetUrl(path: string): string {
   // Strip query parameters to handle clean path
   const [cleanUrl, query] = path.split('?');
   const cleanPath = cleanUrl.replace(/^(\.\/|\/)+/, '');
-  const base = (import.meta as unknown as { env?: { BASE_URL?: string } })?.env?.BASE_URL || '/';
+  const base = import.meta.env.BASE_URL || '/';
   const normalizedBase = base.endsWith('/') ? base : `${base}/`;
   const fullPath = `${normalizedBase}${cleanPath}`;
   return query ? `${fullPath}?${query}` : fullPath;
