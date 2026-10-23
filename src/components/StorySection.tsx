@@ -398,47 +398,42 @@ export const StorySection: React.FC = () => {
             - Then the About Vazra card unfolds gracefully.
             =========================================================================
           */}
-          <div className="max-w-6xl mx-auto w-full relative z-20 flex-1 flex flex-col justify-center items-center my-auto min-h-[480px]">
+          <div className="max-w-6xl mx-auto w-full relative z-20 flex-1 flex flex-col justify-start items-center pt-2 sm:pt-4 min-h-0 overflow-hidden">
 
             {/* -------------------------------------------------------------
                 STAGE 1 PROLOGUE TITLE (Visible when CEO is in Middle)
                 ------------------------------------------------------------- */}
             <div
-              className={`w-full max-w-xl mx-auto text-center z-10 transition-all duration-700 ease-out ${
+              className={`w-full max-w-xl mx-auto text-center z-10 transition-all duration-700 ease-out flex flex-col items-center shrink-0 ${
                 !ceoGlided
-                  ? 'opacity-100 scale-100 pointer-events-auto'
+                  ? 'opacity-100 scale-100 pointer-events-auto relative'
                   : 'opacity-0 scale-95 pointer-events-none absolute'
               }`}
-              style={{
-                marginBottom: isDesktop ? '14rem' : '15rem',
-              }}
             >
-              <div className="mb-3 inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-white/10 backdrop-blur-md border border-purple-300/25 text-purple-200 text-[11px] font-sans font-bold uppercase tracking-[0.2em] shadow-lg">
+              <div className="mb-2 inline-flex items-center gap-1.5 px-3 py-0.5 rounded-full bg-white/10 backdrop-blur-md border border-purple-300/25 text-purple-200 text-[10px] sm:text-[11px] font-sans font-bold uppercase tracking-[0.2em] shadow-lg">
                 <Sparkles className="w-3 h-3 text-amber-300" />
                 <span>THE HERITAGE OF VAZRA</span>
               </div>
 
-              <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-sans font-extrabold text-white tracking-tight leading-tight drop-shadow-xl">
+              <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-sans font-extrabold text-white tracking-tight leading-tight drop-shadow-xl">
                 About Vazra <span className="text-amber-300 font-serif italic font-normal px-1">&</span> Our Story
               </h2>
 
-              <div className="mt-4 p-3.5 sm:p-4 rounded-2xl bg-white/10 backdrop-blur-xl border border-white/20 max-w-lg mx-auto text-center shadow-xl">
-                <p className="text-xs sm:text-sm text-purple-100 font-sans leading-relaxed font-normal">
+              <div className="mt-2.5 p-2.5 sm:p-3.5 rounded-2xl bg-white/10 backdrop-blur-xl border border-white/20 max-w-lg mx-auto text-center shadow-xl">
+                <p className="text-xs sm:text-[13px] text-purple-100 font-sans leading-relaxed font-normal">
                   A cherished generational formula born from mother <strong className="text-white font-semibold">Afzal Bee’s</strong> kitchen in Khammam, Telangana — crafted into an honest brand of pure, traditional herbal hair care.
                 </p>
               </div>
 
-              <div
+              <button
                 onClick={() => changeStep(2)}
-                className="mt-5 inline-flex flex-col items-center gap-1.5 text-purple-200 hover:text-amber-300 transition-colors cursor-pointer group"
+                className="mt-2.5 inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-purple-950/50 border border-purple-300/35 text-purple-200 hover:text-amber-300 hover:border-amber-300 transition-colors cursor-pointer group shadow-sm active:scale-95"
               >
-                <div className="w-8 h-8 rounded-full border border-purple-300/40 group-hover:border-amber-300 flex items-center justify-center animate-bounce shadow-md bg-purple-950/40">
-                  <ArrowDown className="w-3 h-3 text-amber-300" />
-                </div>
-                <span className="text-[10px] font-sans tracking-[0.2em] uppercase font-bold text-purple-200 group-hover:text-amber-200">
+                <ArrowDown className="w-3 h-3 text-amber-300 animate-bounce" />
+                <span className="text-[10px] font-sans tracking-[0.15em] uppercase font-bold text-purple-200 group-hover:text-amber-200">
                   Scroll down or click to unfold story ↓
                 </span>
-              </div>
+              </button>
             </div>
 
             {/* -------------------------------------------------------------
@@ -446,7 +441,9 @@ export const StorySection: React.FC = () => {
                 ------------------------------------------------------------- */}
             <div
               className={`w-full flex-1 flex flex-col lg:flex-row items-center justify-between gap-6 lg:gap-10 my-auto py-2 z-20 transition-all duration-700 ease-out ${
-                ceoGlided ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'
+                ceoGlided
+                  ? 'opacity-100 pointer-events-auto relative'
+                  : 'opacity-0 pointer-events-none absolute inset-0'
               }`}
             >
               {/* LEFT COLUMN: CARDS (About Vazra in Step 2, Our Story in Step 3) */}
@@ -579,7 +576,7 @@ export const StorySection: React.FC = () => {
               style={{
                 position: 'absolute',
                 left: ceoGlided ? (isDesktop ? 'calc(100% - 145px)' : '50%') : '50%',
-                top: ceoGlided ? (isDesktop ? '50%' : '20%') : (isDesktop ? '60%' : '60%'),
+                top: ceoGlided ? (isDesktop ? '50%' : '18%') : (isDesktop ? '65%' : '67%'),
                 transform: `translate(-50%, -50%) scale(${ceoGlided ? 1 : 1.05})`,
               }}
             >
@@ -589,7 +586,7 @@ export const StorySection: React.FC = () => {
                 <div className="absolute -inset-2 rounded-full bg-amber-400/25 blur-lg pointer-events-none" />
 
                 {/* Circular Portrait with Luxury Border Glow */}
-                <div className="w-44 h-44 sm:w-52 sm:h-52 lg:w-60 lg:h-60 rounded-full overflow-hidden p-1.5 bg-gradient-to-tr from-amber-400 via-purple-300 to-emerald-400 shadow-[0_0_40px_rgba(217,119,6,0.4)] relative">
+                <div className="w-36 h-36 sm:w-44 sm:h-44 md:w-50 md:h-50 lg:w-56 lg:h-56 rounded-full overflow-hidden p-1.5 bg-gradient-to-tr from-amber-400 via-purple-300 to-emerald-400 shadow-[0_0_35px_rgba(217,119,6,0.35)] relative">
                   <div className="w-full h-full rounded-full overflow-hidden bg-[#24052a] relative">
                     <img
                       src={getAssetUrl('/images/ceo-founder-real.jpg')}
@@ -603,26 +600,27 @@ export const StorySection: React.FC = () => {
                       className="w-full h-full object-cover object-top hover:scale-105 transition-transform duration-500"
                     />
 
-                    <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/90 via-black/60 to-transparent pt-5 pb-2 px-3 text-center">
-                      <div className="text-[10px] font-sans font-bold uppercase tracking-wider text-amber-300">
+                    {/* Gradient Overlay for Founder & CEO text */}
+                    <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/95 via-black/75 to-transparent pt-6 pb-2.5 px-2 text-center pointer-events-none">
+                      <div className="text-[9px] sm:text-[10px] md:text-[11px] font-sans font-bold uppercase tracking-wider text-amber-300 leading-none mb-0.5">
                         Founder & CEO
                       </div>
-                      <div className="text-xs sm:text-sm font-sans font-bold text-white leading-tight">
+                      <div className="text-[11px] sm:text-xs md:text-sm font-sans font-extrabold text-white leading-tight drop-shadow-md">
                         Vazra Natural Care
                       </div>
                     </div>
                   </div>
                 </div>
 
-                {/* Afzal Bee’s Tradition Badge */}
-                <div className="absolute -top-2 -left-2 bg-white/95 backdrop-blur-md text-gray-900 px-2.5 py-0.5 rounded-full shadow-md border border-white text-[10px] sm:text-[11px] font-sans font-bold flex items-center gap-1">
+                {/* Afzal Bee’s Tradition Badge (Top-Left) */}
+                <div className="absolute -top-2.5 -left-2 sm:-left-4 bg-white/95 backdrop-blur-md text-gray-900 px-2.5 py-0.5 rounded-full shadow-md border border-white text-[9px] sm:text-[10px] md:text-[11px] font-sans font-bold flex items-center gap-1 z-10 whitespace-nowrap">
                   <span>🌿</span>
                   <span>Afzal Bee’s Tradition</span>
                 </div>
 
-                {/* Khammam Location Badge */}
-                <div className="absolute -bottom-2 -right-2 bg-white/95 backdrop-blur-md text-gray-900 px-2.5 py-0.5 rounded-full shadow-md border border-white text-[10px] font-sans font-semibold flex items-center gap-1">
-                  <MapPin className="w-3 h-3 text-emerald-700" />
+                {/* Khammam Location Badge (Top-Right - Symmetrical, never overlaps the bottom name!) */}
+                <div className="absolute -top-2.5 -right-2 sm:-right-4 bg-white/95 backdrop-blur-md text-gray-900 px-2.5 py-0.5 rounded-full shadow-md border border-white text-[9px] sm:text-[10px] md:text-[11px] font-sans font-semibold flex items-center gap-1 z-10 whitespace-nowrap">
+                  <MapPin className="w-3 h-3 text-emerald-700 shrink-0" />
                   <span>Khammam, Telangana</span>
                 </div>
               </div>
