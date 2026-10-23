@@ -250,10 +250,13 @@ export const Hero: React.FC = () => {
         <div
           className="absolute z-20 overflow-hidden select-none"
           style={{
-            left: '5%',
-            right: '5%',
+            left: 0,
+            right: 0,
+            width: '100%',
             top: '73.0%',
             height: '21.5%',
+            maskImage: 'linear-gradient(to right, transparent 0%, rgba(0,0,0,0.15) 3.5%, rgba(0,0,0,1) 11%, rgba(0,0,0,1) 89%, rgba(0,0,0,0.15) 96.5%, transparent 100%)',
+            WebkitMaskImage: 'linear-gradient(to right, transparent 0%, rgba(0,0,0,0.15) 3.5%, rgba(0,0,0,1) 11%, rgba(0,0,0,1) 89%, rgba(0,0,0,0.15) 96.5%, transparent 100%)',
           }}
         >
 
@@ -286,6 +289,40 @@ export const Hero: React.FC = () => {
               </div>
             ))}
           </div>
+        </div>
+
+        {/* Left Botanical Leaves Framing Overlay (Foreground layer above carousel) */}
+        <div
+          className="absolute z-30 pointer-events-none select-none"
+          style={{
+            left: 0,
+            top: '68.3%',
+            width: '10.2%',
+            height: '30.1%',
+          }}
+        >
+          <img
+            src={getAssetUrl('/images/hero-leaves-left.png')}
+            alt=""
+            className="w-full h-full object-contain object-left block"
+          />
+        </div>
+
+        {/* Right Botanical Leaves Framing Overlay (Foreground layer above carousel) */}
+        <div
+          className="absolute z-30 pointer-events-none select-none"
+          style={{
+            right: 0,
+            top: '68.3%',
+            width: '10.2%',
+            height: '30.1%',
+          }}
+        >
+          <img
+            src={getAssetUrl('/images/hero-leaves-right.png')}
+            alt=""
+            className="w-full h-full object-contain object-right block"
+          />
         </div>
 
         {/* 6. "Explore Ingredients ->" Pill Button in Arch */}
@@ -356,7 +393,13 @@ export const Hero: React.FC = () => {
         </div>
 
         {/* Mobile Smooth Infinite Rotating Ingredients Carousel */}
-        <div className="relative w-full py-5 overflow-hidden select-none">
+        <div
+          className="relative w-full py-5 overflow-hidden select-none"
+          style={{
+            maskImage: 'linear-gradient(to right, transparent 0%, rgba(0,0,0,0.2) 3%, rgba(0,0,0,1) 10%, rgba(0,0,0,1) 90%, rgba(0,0,0,0.2) 97%, transparent 100%)',
+            WebkitMaskImage: 'linear-gradient(to right, transparent 0%, rgba(0,0,0,0.2) 3%, rgba(0,0,0,1) 10%, rgba(0,0,0,1) 90%, rgba(0,0,0,0.2) 97%, transparent 100%)',
+          }}
+        >
 
           <div className="flex items-center animate-marquee-infinite">
             {[...rotatingHerbs, ...rotatingHerbs].map((herb, idx) => (
