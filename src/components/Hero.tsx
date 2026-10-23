@@ -16,7 +16,7 @@ export const Hero: React.FC = () => {
       botanicalName: 'Phyllanthus emblica',
       commonName: 'Amla',
       shortRole: 'Strengthens Roots',
-      image: getAssetUrl('/images/ing-amla-hd.jpg'),
+      image: getAssetUrl('/images/ing-amla-hd.jpg?v=pure_ingredient_no_plate'),
       traditionalRole: 'Naturally rich in Vitamin C, traditionally used to nourish the hair follicles and support natural hair strength and shine.',
       icon: '🌿',
       badgeColor: 'bg-emerald-100 text-emerald-800'
@@ -26,7 +26,7 @@ export const Hero: React.FC = () => {
       botanicalName: 'Eclipta prostrata',
       commonName: 'Bhringraj',
       shortRole: 'Promotes Growth',
-      image: getAssetUrl('/images/ing-bhringraj-hd.jpg'),
+      image: getAssetUrl('/images/ing-bhringraj-hd.jpg?v=pure_ingredient_no_plate'),
       traditionalRole: 'Known in Ayurveda as the "ruler of hair," traditionally revered for soothing the scalp and activating vitality.',
       icon: '🌱',
       badgeColor: 'bg-green-100 text-green-800'
@@ -36,7 +36,7 @@ export const Hero: React.FC = () => {
       botanicalName: 'Hibiscus rosa-sinensis',
       commonName: 'Hibiscus',
       shortRole: 'Adds Natural Shine',
-      image: getAssetUrl('/images/ing-hibiscus-hd.jpg'),
+      image: getAssetUrl('/images/ing-hibiscus-hd.jpg?v=pure_ingredient_no_plate'),
       traditionalRole: 'Packed with natural amino acids that condition hair strands, lending a silky, healthy natural gloss.',
       icon: '🌺',
       badgeColor: 'bg-rose-100 text-rose-800'
@@ -46,7 +46,7 @@ export const Hero: React.FC = () => {
       botanicalName: 'Cocos nucifera',
       commonName: 'Coconut',
       shortRole: 'Nourishes Deeply',
-      image: getAssetUrl('/images/ing-coconut-hd.jpg'),
+      image: getAssetUrl('/images/ing-coconut-hd.jpg?v=pure_ingredient_no_plate'),
       traditionalRole: 'Pure cold-pressed carrier base that deeply penetrates hair cuticles, sealing moisture and preventing dryness.',
       icon: '🥥',
       badgeColor: 'bg-amber-100 text-amber-800'
@@ -56,7 +56,7 @@ export const Hero: React.FC = () => {
       botanicalName: 'Trigonella foenum-graecum',
       commonName: 'Methi',
       shortRole: 'Reduces Hair Fall',
-      image: getAssetUrl('/images/ing-methi-hd.jpg'),
+      image: getAssetUrl('/images/ing-methi-hd.jpg?v=pure_ingredient_no_plate'),
       traditionalRole: 'Contains natural proteins and lecithin that nourish dry scalps, soften coarse strands, and reduce styling friction.',
       icon: '🌾',
       badgeColor: 'bg-yellow-100 text-yellow-800'
@@ -66,7 +66,7 @@ export const Hero: React.FC = () => {
       botanicalName: 'Murraya koenigii',
       commonName: 'Curry Leaves',
       shortRole: 'Prevents Greying',
-      image: getAssetUrl('/images/ing-curryleaves-hd.jpg'),
+      image: getAssetUrl('/images/ing-curryleaves-hd.jpg?v=pure_ingredient_no_plate'),
       traditionalRole: 'Rich in antioxidants and beta-carotene, traditionally cooked in oil to help maintain rich, vibrant pigment.',
       icon: '🍃',
       badgeColor: 'bg-teal-100 text-teal-800'
@@ -76,7 +76,7 @@ export const Hero: React.FC = () => {
       botanicalName: 'Azadirachta indica',
       commonName: 'Neem',
       shortRole: 'Purifies Scalp',
-      image: getAssetUrl('/images/botanical/azadirachta-indica.jpg'),
+      image: getAssetUrl('/images/botanical/azadirachta-indica.jpg?v=pure_ingredient_no_plate'),
       traditionalRole: 'Renowned for maintaining a clean, clear scalp environment free from buildup and seasonal flakiness.',
       icon: '🌿',
       badgeColor: 'bg-emerald-100 text-emerald-800'
@@ -86,7 +86,7 @@ export const Hero: React.FC = () => {
       botanicalName: 'Bacopa monnieri',
       commonName: 'Brahmi',
       shortRole: 'Calming Roots',
-      image: getAssetUrl('/images/botanical/bacopa-monnieri.jpg'),
+      image: getAssetUrl('/images/botanical/bacopa-monnieri.jpg?v=pure_ingredient_no_plate'),
       traditionalRole: 'Valued for centuries to promote relaxation during scalp massage while softening hair strands.',
       icon: '🌱',
       badgeColor: 'bg-green-100 text-green-800'
@@ -96,7 +96,7 @@ export const Hero: React.FC = () => {
       botanicalName: 'Aloe barbadensis',
       commonName: 'Aloe Vera',
       shortRole: 'Soothing Hydration',
-      image: getAssetUrl('/images/botanical/aloe-barbadensis.jpg'),
+      image: getAssetUrl('/images/botanical/aloe-barbadensis.jpg?v=pure_ingredient_no_plate'),
       traditionalRole: 'Supplies gentle hydration and natural proteolytic enzymes that keep the scalp calm, cool, and moisturized.',
       icon: '🌵',
       badgeColor: 'bg-cyan-100 text-cyan-800'
@@ -106,7 +106,7 @@ export const Hero: React.FC = () => {
       botanicalName: 'Acacia concinna',
       commonName: 'Shikakai',
       shortRole: 'Gentle Cleanser',
-      image: getAssetUrl('/images/botanical/acacia-concinna.jpg'),
+      image: getAssetUrl('/images/botanical/acacia-concinna.jpg?v=pure_ingredient_no_plate'),
       traditionalRole: 'Traditional botanical cleanser that leaves hair silky and manageable without stripping natural oils.',
       icon: '🍂',
       badgeColor: 'bg-amber-100 text-amber-800'
@@ -256,9 +256,6 @@ export const Hero: React.FC = () => {
             height: '21.5%',
           }}
         >
-          {/* Subtle Left and Right fade masks for seamless entry and exit */}
-          <div className="absolute inset-y-0 left-0 w-20 bg-gradient-to-r from-[#fbfaf5] to-transparent z-10 pointer-events-none" />
-          <div className="absolute inset-y-0 right-0 w-20 bg-gradient-to-l from-[#fbfaf5] to-transparent z-10 pointer-events-none" />
 
           {/* Infinite Rotating Marquee Container */}
           <div className="flex items-center h-full animate-marquee-infinite group cursor-pointer">
@@ -360,9 +357,6 @@ export const Hero: React.FC = () => {
 
         {/* Mobile Smooth Infinite Rotating Ingredients Carousel */}
         <div className="relative w-full py-5 overflow-hidden select-none">
-          {/* Edge fade masks */}
-          <div className="absolute inset-y-0 left-0 w-8 bg-gradient-to-r from-[#fbfaf5] to-transparent z-10 pointer-events-none" />
-          <div className="absolute inset-y-0 right-0 w-8 bg-gradient-to-l from-[#fbfaf5] to-transparent z-10 pointer-events-none" />
 
           <div className="flex items-center animate-marquee-infinite">
             {[...rotatingHerbs, ...rotatingHerbs].map((herb, idx) => (
