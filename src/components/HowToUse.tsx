@@ -1,6 +1,7 @@
 import { getAssetUrl } from '../utils/assets';
 import React, { useState, useEffect } from 'react';
 import { Sparkles, Clock, CheckCircle, ChevronRight, ChevronLeft, Play, Pause, ShieldCheck, Heart, Sparkle } from 'lucide-react';
+import { OilPourAnimation } from './OilPourAnimation';
 
 interface RitualStep {
   number: string;
@@ -257,12 +258,17 @@ export const HowToUse: React.FC = () => {
 
                 {/* The Picture Frame with Gentle Floating Animation */}
                 <div className="relative w-full aspect-square rounded-3xl overflow-hidden bg-stone-100 shadow-xl border border-white/60 animate-float-slow">
-                  <img
-                    key={current.image}
-                    src={current.image}
-                    alt={current.title}
-                    className="w-full h-full object-cover object-center animate-fade-in group-hover:scale-106 transition-transform duration-700"
-                  />
+                  <div className="w-full h-full relative group-hover:scale-106 transition-transform duration-700">
+                    <img
+                      key={current.image}
+                      src={current.image}
+                      alt={current.title}
+                      className="w-full h-full object-cover object-center animate-fade-in"
+                    />
+
+                    {/* Dynamic Falling Oil Animation for Step 1 (Dispense & Warm the Oil) */}
+                    {current.number === '01' && <OilPourAnimation />}
+                  </div>
 
                   {/* Gentle Gradient Shimmer */}
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent pointer-events-none" />
