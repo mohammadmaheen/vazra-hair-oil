@@ -125,7 +125,7 @@ export const Hero: React.FC = () => {
       <div className="hidden md:block relative w-full max-w-[1920px] mx-auto select-none">
         {/* The Master Unified Canvas Image */}
         <img
-          src={getAssetUrl("/images/hero-unified-canvas-hd.jpg?v=flawless_model_image2_seamless_no_cuts")}
+          src={getAssetUrl("/images/hero-unified-canvas-hd.jpg?v=pristine_image2_crisp_dark_text_no_outline")}
           alt="Vazra Herbal Hair Oil - Stronger, Healthier, Naturally You"
           className="w-full h-auto block select-none pointer-events-none"
           loading="eager"
@@ -349,7 +349,7 @@ export const Hero: React.FC = () => {
         {/* Mobile Hero Banner */}
         <div className="relative w-full">
           <img
-            src={getAssetUrl("/images/hero-mobile-hd.jpg?v=flawless_model_image2_seamless_no_cuts")}
+            src={getAssetUrl("/images/hero-mobile-hd.jpg?v=pristine_image2_crisp_dark_text_no_outline")}
             alt="Vazra Herbal Hair Oil - Stronger, Healthier, Naturally You"
             className="w-full h-auto block select-none"
             loading="eager"
